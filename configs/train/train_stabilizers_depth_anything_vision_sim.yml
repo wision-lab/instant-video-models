@@ -1,0 +1,17 @@
+_defaults:
+  - ./_defaults.yml
+  - ./_train_stabilizers.yml
+  - configs/metrics/_depth_metrics.yml
+  - configs/models/depth_anything.yml
+  - vision_sim_train_chunk_8: configs/datasets/vision_sim_train_chunk_8.yml
+  - vision_sim_val: configs/datasets/vision_sim_val.yml
+loss:
+  mask_nan: true
+postprocess_transform:
+  _target: stability.utils.AffineAlignPredictions
+  mask_nan: true
+train_batch_size: 1
+train_dataset: ${vision_sim_train_chunk_8.dataset}
+train_repeats: 50
+val_batch_size: 1
+val_dataset: ${vision_sim_val.dataset}

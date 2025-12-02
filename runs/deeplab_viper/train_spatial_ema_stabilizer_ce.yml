@@ -1,0 +1,19 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - configs/stabilizers/deeplab/spatial_ema_stabilizer.yml
+
+# Use lambda to create a subdir instead of appending to the name.
+_name: train_spatial_ema_stabilizer_ce
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
+
+epochs: 60
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 20, 40 ]
+  gamma: 0.1
+
+# Spatial fusion improves mean IOU and categorical stability slightly for lambda<8.0
+# Learning curves very similar

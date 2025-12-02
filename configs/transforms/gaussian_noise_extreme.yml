@@ -1,0 +1,3 @@
+transforms:
+  - _target: stability.transforms.gaussian_noise.GaussianNoise
+    sigma: 0.6

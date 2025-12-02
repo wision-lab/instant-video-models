@@ -1,0 +1,33 @@
+_defaults:
+  - ../visualizers/segmentation.yml
+model:
+  _target: stability.models.deeplab.Deeplab
+  adapted_classes: null
+  model_name: deeplabv3plus_mobilenet
+  native_classes: 19
+  normalize_mean: [ 0.485, 0.456, 0.406 ]
+  normalize_std: [ 0.229, 0.224, 0.225 ]
+  output_stride: 16
+  weights_filepath: ${_original_dir}/weights/deeplab/deeplab_mobilenet_cityscapes.pth
+visualizer:
+  # extern/deeplab/datasets/cityscapes.py
+  id_to_name:
+    0: road
+    1: sidewalk
+    2: building
+    3: wall
+    4: fence
+    5: pole
+    6: traffic light
+    7: traffic sign
+    8: vegetation
+    9: terrain
+    10: sky
+    11: person
+    12: rider
+    13: car
+    14: truck
+    15: bus
+    16: train
+    17: motorcycle
+    18: bicycle

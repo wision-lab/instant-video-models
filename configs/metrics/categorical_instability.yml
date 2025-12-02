@@ -1,0 +1,4 @@
+metric:
+  _target: stability.metrics.categorical_instability.CategoricalInstability
+  assume_batch_dim: true
+  class_dim: 0

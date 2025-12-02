@@ -1,0 +1,9 @@
+clip:
+  video: ${_original_dir}/data/videos/9E55pOK14eo.mp4
+  crop:
+    x_min: 470
+    y_min: 20
+    x_max: 1430
+    y_max: 980
+  start_time: 35.0
+  end_time: 36.0

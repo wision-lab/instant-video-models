@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./extern/adain",
+        "./extern/deeplab",
+        "./extern/nafnet"
+    ]
+}

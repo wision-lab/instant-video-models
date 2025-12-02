@@ -1,0 +1,12 @@
+_defaults:
+  - ./_defaults.yml
+  - ./_train_stabilizers.yml
+  - configs/metrics/_video_metrics.yml
+  - configs/models/nafnet.yml
+  - davis_train_chunk_8: configs/datasets/davis_train_chunk_8.yml
+  - davis_val: configs/datasets/davis_val.yml
+train_batch_size: 1
+train_dataset: ${davis_train_chunk_8.dataset}
+train_repeats: 40
+val_batch_size: 1
+val_dataset: ${davis_val.dataset}

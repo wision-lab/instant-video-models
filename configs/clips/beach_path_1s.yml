@@ -1,0 +1,5 @@
+_defaults:
+  - ./beach_path_4s.yml
+clip:
+  start_time: 2.0
+  end_time: 3.0

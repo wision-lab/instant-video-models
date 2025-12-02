@@ -1,0 +1,7 @@
+clip:
+  video: ${_original_dir}/data/clips/O5bE-Q3Quko_430.0_4.0.mp4
+  crop:
+    x_min: 0
+    y_min: 200
+    x_max: 1280
+    y_max: 920

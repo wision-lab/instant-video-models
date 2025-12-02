@@ -1,0 +1,30 @@
+_defaults:
+  - ./deeplab.yml
+model:
+  adapted_classes: 24
+visualizer:
+  id_to_name:
+    0: sky
+    1: road
+    2: sidewalk
+    3: terrain
+    4: tree
+    5: vegetation
+    6: building
+    7: infrastructure
+    8: fence
+    9: billboard
+    10: trafficlight
+    11: trafficsign
+    12: mobilebarrier
+    13: firehydrant
+    14: chair
+    15: trash
+    16: trashcan
+    17: person
+    18: motorcycle
+    19: car
+    20: van
+    21: bus
+    22: truck
+    23: other

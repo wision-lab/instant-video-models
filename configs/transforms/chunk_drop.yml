@@ -1,0 +1,4 @@
+transforms:
+  - _target: stability.transforms.chunk_drop.ChunkDrop
+    chunk_size: 8
+    drop_ratio: 0.1

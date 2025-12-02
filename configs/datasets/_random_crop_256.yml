@@ -1,0 +1,2 @@
+dataset:
+  random_crop_size: [ 256, 256 ]

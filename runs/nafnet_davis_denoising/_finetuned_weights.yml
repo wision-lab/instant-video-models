@@ -1,0 +1,2 @@
+model:
+  weights_filepath: ${_original_dir}/outputs/nafnet_davis_denoising/finetune_base_model/2025_04_26-12_33_54/weights_best.pth

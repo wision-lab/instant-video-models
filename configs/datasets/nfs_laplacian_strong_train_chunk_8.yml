@@ -1,0 +1,7 @@
+_defaults:
+  - ./_nfs_laplacian_strong.yml
+  - ./_nfs_train.yml
+  - ./_resize_transform_360_paired.yml
+
+dataset:
+  random_chunk_size: 8

@@ -1,0 +1,3 @@
+transforms:
+  - _target: stability.transforms.poisson_noise.PoissonNoise
+    scale: 64.0

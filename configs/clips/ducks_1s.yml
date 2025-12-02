@@ -1,0 +1,6 @@
+_defaults:
+  - ./ducks_4s.yml
+
+clip:
+  start_time: 0.0
+  end_time: 1.0

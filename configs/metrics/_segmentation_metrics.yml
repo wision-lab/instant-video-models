@@ -1,0 +1,8 @@
+_defaults:
+  - accuracy: ./accuracy.yml
+  - mean_iou: ./mean_iou.yml
+  - categorical_instability: ./categorical_instability.yml
+metrics:
+  - ${accuracy.metric}
+  - ${mean_iou.metric}
+  - ${categorical_instability.metric}

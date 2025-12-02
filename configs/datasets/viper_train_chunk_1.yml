@@ -1,0 +1,7 @@
+_defaults:
+  - ./_viper.yml
+  - ./_random_crop_256.yml
+
+dataset:
+  random_chunk_size: 1
+  split: train

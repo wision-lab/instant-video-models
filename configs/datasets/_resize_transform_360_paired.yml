@@ -1,0 +1,10 @@
+dataset:
+  # Resize the smaller edge to 360.
+  frame_transform:
+    _target: torchvision.transforms.Resize
+    antialias: true
+    size: 360
+  label_transform:
+    _target: torchvision.transforms.Resize
+    antialias: true
+    size: 360

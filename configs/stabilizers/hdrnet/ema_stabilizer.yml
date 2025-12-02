@@ -1,0 +1,27 @@
+stabilizers:
+  # One stabilizer on each Conv2d layer
+  - filter:
+      typename: Conv2d
+    module:
+      _target: stability.stabilizers.ema_stabilizer.EMAStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+  # One stabilizer on each Linear layer (found in the global net)
+  - filter:
+      typename: Linear
+    module:
+      _target: stability.stabilizers.ema_stabilizer.EMAStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+  # One stabilizer on the output
+  - filter:
+      name: ''
+    module:
+      _target: stability.stabilizers.ema_stabilizer.EMAStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+# Override this value to test degrees of stabilization.
+alpha: 0.9

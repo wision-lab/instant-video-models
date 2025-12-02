@@ -1,0 +1,5 @@
+_defaults:
+  - ./zion_riverside_4s.yml
+clip:
+  start_time: 1.0
+  end_time: 2.0

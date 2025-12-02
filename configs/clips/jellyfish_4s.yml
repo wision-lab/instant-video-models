@@ -1,0 +1,9 @@
+clip:
+  video: ${_original_dir}/data/clips/HZ8VF0EdITk-jellyfish.mp4
+  crop:
+    x_min: 450
+    y_min: 250
+    x_max: 1410
+    y_max: 970
+  start_time: 3.0
+  end_time: 7.0

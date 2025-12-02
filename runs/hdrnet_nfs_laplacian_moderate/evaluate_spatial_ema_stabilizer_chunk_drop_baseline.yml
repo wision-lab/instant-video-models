@@ -1,0 +1,15 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+
+frame_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: torchvision.transforms.Resize
+      antialias: true
+      size: 360
+    - _target: stability.transforms.chunk_drop.ChunkDrop
+      chunk_size: 8
+      drop_ratio: 0.1
+
+dataset:
+  frame_transform: ${frame_transform}

@@ -1,0 +1,5 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - configs/stabilizers/nafnet/spatial_ema_stabilizer.yml
+_name: train_spatial_ema_stabilizer_rain
+corruption_type: rain

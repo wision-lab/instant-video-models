@@ -1,0 +1,10 @@
+stabilizers:
+  - filter:
+      typename: DepthAnythingDepthEstimationHead  # Model output
+    module:
+      _target: stability.stabilizers.gaussian_stabilizer.GaussianStabilizer
+      sigma: ${....sigma}
+      window_size: 20
+
+# Override this value to test degrees of stabilization.
+sigma: 0.9

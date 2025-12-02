@@ -1,0 +1,5 @@
+_defaults:
+  - ./train_spatial_ema_stabilizer_longer.yml
+_name: train_spatial_ema_stabilizer_longer_baseline
+train_dataset:
+  random_chunk_size: 8

@@ -1,0 +1,2 @@
+# Override the default color cycle.
+axes.prop_cycle: cycler('color', ['aa0000', '0000aa', 'd4aa00', '8800aa', '00aa00', 'ff7f2a', '00ccff'])

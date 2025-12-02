@@ -1,0 +1,4 @@
+_defaults:
+  - configs/evaluate/evaluate_nafnet_davis.yml
+  - ./_noise_40.yml
+  - ./_finetuned_weights.yml

@@ -1,0 +1,6 @@
+metric:
+  _target: stability.metrics.depth_delta.DepthDelta
+  assume_batch_dim: true
+  mask_nan: true
+  max_pred_depth: 200
+  threshold: 1.25

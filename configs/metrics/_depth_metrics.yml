@@ -1,0 +1,8 @@
+_defaults:
+  - depth_abs_rel_200: ./depth_abs_rel_200.yml
+  - depth_delta_1_200: ./depth_delta_1_200.yml
+  - norm_instability_l2: ./norm_instability_l2.yml
+metrics:
+  - ${depth_abs_rel_200.metric}
+  - ${depth_delta_1_200.metric}
+  - ${norm_instability_l2.metric}

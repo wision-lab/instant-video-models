@@ -1,0 +1,28 @@
+seed: 42
+device: "cuda:0"
+model:
+  type: "resnet50"
+  pretrained: true
+  num_classes: 2
+hyperparameters:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 80
+  scheduler: "step_lr"
+  step_size: 40
+  gamma: 0.1
+transforms:
+  resize: [224, 224]
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  augmentations:
+    random_flip: true
+    random_rotation_degrees: 10
+    color_jitter:
+      brightness: 0.2
+      contrast: 0.2
+      saturation: 0.2 
+      hue: 0.1  
+dataset:
+  path: "data/davis_2017/DAVIS/CroppedImages"

@@ -1,0 +1,7 @@
+_defaults:
+  - ./_viper.yml
+
+dataset:
+  # Speed up validation by only looking at the first 32 frames from each video.
+  ending_frame: 32
+  split: val

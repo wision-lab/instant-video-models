@@ -1,0 +1,10 @@
+_defaults:
+  - configs/train/finetune_hdrnet_nfs_laplacian_strong.yml
+
+epochs: 80
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 40, 60 ]
+  gamma: 0.1

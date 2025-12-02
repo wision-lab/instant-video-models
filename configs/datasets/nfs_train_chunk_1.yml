@@ -1,0 +1,8 @@
+_defaults:
+  - ./_nfs.yml
+  - ./_nfs_train.yml
+  - ./_resize_transform_360.yml
+  - ./_random_crop_256.yml
+
+dataset:
+  random_chunk_size: 1

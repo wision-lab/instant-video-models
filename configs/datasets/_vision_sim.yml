@@ -1,0 +1,10 @@
+dataset:
+  _target: stability.datasets.vision_sim.VisionSim
+  location: ${_original_dir}/data/vision_sim
+  depth_nan_threshold: 1e9
+  ending_frame: null
+  frame_transform: null
+  invert_depth: true
+  random_chunk_size: null
+  random_crop_size: null
+  split_subset: null

@@ -1,0 +1,27 @@
+dataset:
+  random_chunk_size: 1
+  frame_transform:
+    _target: torchvision.transforms.Compose
+    transforms:
+      # Make all images landscape to enable batching.
+      - _target: stability.misc.rotate_landscape.RotateLandscape
+
+      # Resize from 1280x720 to 640x360 (half).
+      # Some dataset images are not exactly 1280x720 - the aspect ratio of these images
+      # will change slightly during the resize.
+      - _target: torchvision.transforms.Resize
+        antialias: true
+        size: [ 360, 640 ]
+
+  label_transform:
+    _target: torchvision.transforms.Compose
+    transforms:
+      # Make all images landscape to enable batching.
+      - _target: stability.misc.rotate_landscape.RotateLandscape
+
+      # Resize from 1280x720 to 640x360 (half).
+      # Some dataset images are not exactly 1280x720 - the aspect ratio of these images
+      # will change slightly during the resize.
+      - _target: torchvision.transforms.Resize
+        antialias: true
+        size: [ 360, 640 ]

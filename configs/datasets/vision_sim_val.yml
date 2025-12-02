@@ -1,0 +1,7 @@
+_defaults:
+  - ./_vision_sim.yml
+  - ./_vision_sim_val.yml
+
+dataset:
+  # Speed up validation by only looking at the first 64 frames from each video.
+  ending_frame: 64

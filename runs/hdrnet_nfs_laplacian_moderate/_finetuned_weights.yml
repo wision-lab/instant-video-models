@@ -1,0 +1,2 @@
+model:
+  weights_filepath: ${_original_dir}/outputs/hdrnet_nfs_laplacian_moderate/finetune_base_model/2025_04_28-02_34_03/weights_best.pth

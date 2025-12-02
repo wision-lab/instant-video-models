@@ -1,0 +1,8 @@
+_chdir: true
+_output_dir: outputs/${_config_dir}/${_name}/${_datetime}
+batch_size: 1
+input_transform: null
+metrics: [ ]
+num_workers: 0
+seed: 42
+stabilizers: [ ]

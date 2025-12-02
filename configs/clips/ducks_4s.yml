@@ -1,0 +1,9 @@
+clip:
+  video: ${_original_dir}/data/clips/ANeMCOpx_84-ducks.mp4
+  crop:
+    x_min: 500
+    y_min: 100
+    x_max: 1460
+    y_max: 820
+  start_time: 0.0
+  end_time: 4.0

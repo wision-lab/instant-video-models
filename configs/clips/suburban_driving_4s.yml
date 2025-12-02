@@ -1,0 +1,7 @@
+clip:
+  video: ${_original_dir}/data/clips/sJsifnDc1fU_538.0_4.0.mp4
+  crop:
+    x_min: 320
+    y_min: 280
+    x_max: 1600
+    y_max: 1000

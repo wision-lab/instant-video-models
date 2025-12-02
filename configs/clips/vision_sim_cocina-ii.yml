@@ -1,0 +1,4 @@
+clip:
+  video: ${_original_dir}/data/vision_sim/renders/cocina-ii/002-00002-01200/frames.mp4
+  start_time: 0.0
+  end_time: 4.0

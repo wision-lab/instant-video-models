@@ -1,0 +1,4 @@
+visualizer:
+  _target: stability.visualizers.heatmap.HeatmapVisualizer
+  cmap_name: viridis
+  normalize: true

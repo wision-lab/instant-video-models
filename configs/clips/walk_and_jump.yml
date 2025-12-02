@@ -1,0 +1,4 @@
+clip:
+  # Sanity check for HDRNet - can be compared against data/misc/walk_and_jump_hdrnet_reference.mp4 (assumes the
+  # local_laplacian/normal_1024 weights)
+  video: ${_original_dir}/data/clips/walk_and_jump.mov

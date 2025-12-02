@@ -1,0 +1,7 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
+
+dataset:
+  frame_transform:
+    _target: stability.transforms.gaussian_noise.GaussianNoise
+    sigma: 0.2

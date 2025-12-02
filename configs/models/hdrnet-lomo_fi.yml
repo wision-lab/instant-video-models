@@ -1,0 +1,4 @@
+_defaults:
+  - ./hdrnet-laplacian.yml
+model:
+  weights_filepath: ${_original_dir}/weights/hdrnet/photoshop/lomo_fi.pth

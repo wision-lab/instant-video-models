@@ -1,0 +1,8 @@
+_defaults:
+  - psnr_float_1: configs/metrics/psnr_float_1.yml
+  - ssim_float_1: configs/metrics/ssim_float_1.yml
+  - norm_instability_l2: configs/metrics/norm_instability_l2.yml
+metrics:
+  - ${psnr_float_1.metric}
+  - ${ssim_float_1.metric}
+  - ${norm_instability_l2.metric}

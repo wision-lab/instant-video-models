@@ -1,0 +1,7 @@
+_defaults:
+  - ./_vision_sim.yml
+  - ./_vision_sim_train.yml
+  - ./_random_crop_512.yml
+
+dataset:
+  random_chunk_size: 8

@@ -1,0 +1,5 @@
+input_transform:
+  _target: stability.transforms.gaussian_noise.GaussianNoise
+
+  # 40 / 255
+  sigma: 0.156862745

@@ -1,0 +1,5 @@
+_defaults:
+  - ./train_spatial_ema_stabilizer_salt_pepper_noise.yml
+  - configs/stabilizers/nafnet/controlled_ema_stabilizer_composable.yml
+
+_name: train_spatial_ema_stabilizer_salt_pepper_noise_composable

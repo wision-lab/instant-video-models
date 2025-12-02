@@ -1,0 +1,11 @@
+_defaults:
+  - ./_davis.yml
+
+  # https://arxiv.org/pdf/1907.01361
+  - ./_resize_transform_480.yml
+
+dataset:
+  # Speed up validation by only looking at the first 64 frames from each video.
+  ending_frame: 64
+
+  split: val

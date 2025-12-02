@@ -1,0 +1,3 @@
+transforms:
+  - _target: stability.transforms.jpeg_compression.JPEGCompression
+    quality: 10

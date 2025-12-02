@@ -1,0 +1,9 @@
+freeze_initial_params: true
+lambda: 0.4
+loss:
+  _target: stability.metrics.unified_loss.UnifiedLoss
+  loss_metric:
+    _target: stability.losses.rmse.RMSE
+    epsilon: 1e-6
+  stability_weight: ${..lambda}
+  mask_nan: false

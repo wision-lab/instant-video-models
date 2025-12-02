@@ -1,0 +1,10 @@
+stabilizers:
+  - filter:
+      typename: DepthAnythingDepthEstimationHead  # Model output
+    module:
+      _target: stability.stabilizers.ema_stabilizer.EMAStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+# Override this value to test degrees of stabilization.
+alpha: 0.9

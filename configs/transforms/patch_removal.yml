@@ -1,0 +1,6 @@
+transforms:
+  - _target: stability.transforms.patch_removal.PatchRemoval
+    min_number: 1
+    max_number: 8
+    min_size: 40
+    max_size: 120

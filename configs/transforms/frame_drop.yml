@@ -1,0 +1,3 @@
+transforms:
+  - _target: stability.transforms.frame_drop.FrameDrop
+    drop_ratio: 0.1

@@ -1,0 +1,11 @@
+dataset:
+  _target: stability.datasets.nfs_laplacian.NFSLaplacian
+  nfs_location: ${_original_dir}/data/nfs
+  laplacian_location: ${_original_dir}/data/nfs_laplacian_moderate
+  ending_frame: null
+  fps: 240
+  frame_drop_ratios: [ 1 ]
+  frame_transform: null
+  random_chunk_size: null
+  random_crop_size: null
+  split_subset: null

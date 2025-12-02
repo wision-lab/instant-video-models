@@ -1,0 +1,2 @@
+visualizer:
+  _target: stability.visualizers.image.ImageVisualizer

@@ -1,0 +1,14 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+
+frame_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: torchvision.transforms.Resize
+      antialias: true
+      size: 360
+    - _target: stability.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.2
+
+dataset:
+  frame_transform: ${frame_transform}

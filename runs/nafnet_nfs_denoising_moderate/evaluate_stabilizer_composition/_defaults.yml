@@ -1,0 +1,34 @@
+_defaults:
+  - configs/evaluate/evaluate_nafnet_nfs.yml
+  - configs/stabilizers/nafnet/composed_ema_stabilizers.yml
+
+model:
+  weights_filepath: ${_original_dir}/outputs/nafnet_nfs_denoising_moderate/finetune_base_model/2025_04_23-17_56_23/weights_best.pth
+
+# Fill in "compose_transforms" with the list of transforms.
+input_transform:
+  _target: torchvision.transforms.Compose
+  transforms: ${compose_transforms}
+
+# Shorthands that can be used when creating input_transform for each run.
+gaussian_noise:
+  _target: stability.transforms.gaussian_noise.GaussianNoise
+  sigma: 0.1
+chunk_drop:
+  _target: stability.transforms.chunk_drop.ChunkDrop
+  chunk_size: 8
+  drop_ratio: 0.1
+elastic_transform:
+  _target: stability.transforms.elastic_transform.ElasticTransform
+  magnitude: 50.0
+  smoothness: 5.0
+frame_drop:
+  _target: stability.transforms.frame_drop.FrameDrop
+  drop_ratio: 0.1
+jpeg_compression:
+  _target: stability.transforms.jpeg_compression.JPEGCompression
+  quality: 10
+salt_pepper_noise:
+  _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
+  salt_amount: 0.05
+  pepper_amount: 0.05

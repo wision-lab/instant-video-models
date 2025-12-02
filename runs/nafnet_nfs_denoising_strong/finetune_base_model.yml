@@ -1,0 +1,11 @@
+_defaults:
+  - configs/train/finetune_nafnet_nfs.yml
+  - ./_noise_strong.yml
+
+epochs: 20
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 10, 15 ]
+  gamma: 0.1

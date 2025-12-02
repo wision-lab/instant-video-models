@@ -1,0 +1,4 @@
+_defaults:
+  - ./train_spatial_ema_stabilizer_rain.yml
+_name: train_spatial_ema_stabilizer_rain_unfrozen
+freeze_initial_params: false

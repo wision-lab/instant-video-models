@@ -1,0 +1,6 @@
+_defaults:
+  - ./zion_riverside_1s.yml
+clip:
+  crop:
+    x_min: 380
+    x_max: 1100

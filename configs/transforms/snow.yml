@@ -1,0 +1,12 @@
+transforms:
+  - _target: stability.transforms.snow.Snow
+    min_density: 5e-5
+    max_density: 1e-4
+    min_size: 5.0
+    max_size: 10.0
+    min_rotation: 0.0
+    max_rotation: 180.0
+    min_transparency: 0.5
+    max_transparency: 1.0
+    min_blur: 1.0
+    max_blur: 4.0

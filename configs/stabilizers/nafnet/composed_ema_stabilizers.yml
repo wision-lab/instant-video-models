@@ -1,0 +1,101 @@
+stabilizers:
+  # Two composed stabilizers on each NAFBlock
+  - filter:
+      typename: NAFBlock
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: true
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: module.controller_backbone_1
+        name: controller_backbone
+    registration_name: ensemble_1
+  - filter:
+      typename: NAFBlock
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: true
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: module.controller_backbone_2
+        name: controller_backbone
+    registration_name: ensemble_2
+
+  # Two composed stabilizers on the output
+  - filter:
+      name: module
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: true
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: module.controller_backbone_1
+        name: controller_backbone
+    registration_name: ensemble_1
+  - filter:
+      name: module
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: true
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: module.controller_backbone_2
+        name: controller_backbone
+    registration_name: ensemble_2
+
+controllers:
+  # Two parallel backbones
+  - filter:
+      name: module
+    module:
+      _target: stability.controllers.conv_backbone.ConvBackbone
+      conv_kernel_size: 3
+      hidden_layers: 6
+      hook_target: inputs
+      internal_channels: 32
+      skip_connection: false
+    pre_hook: true
+    registration_name: controller_backbone_1
+  - filter:
+      name: module
+    module:
+      _target: stability.controllers.conv_backbone.ConvBackbone
+      conv_kernel_size: 3
+      hidden_layers: 6
+      hook_target: inputs
+      internal_channels: 32
+      skip_connection: false
+    pre_hook: true
+    registration_name: controller_backbone_2

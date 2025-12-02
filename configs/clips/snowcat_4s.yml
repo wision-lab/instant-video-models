@@ -1,0 +1,9 @@
+clip:
+  video: ${_original_dir}/data/clips/obSH5F2DYvk-snowcat.mp4
+  crop:
+    x_min: 550
+    y_min: 200
+    x_max: 1510
+    y_max: 920
+  start_time: 7.0
+  end_time: 11.0

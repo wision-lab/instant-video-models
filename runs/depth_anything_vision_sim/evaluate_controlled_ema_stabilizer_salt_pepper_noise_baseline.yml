@@ -1,0 +1,7 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
+
+frame_transform:
+  _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
+  salt_amount: 0.05
+  pepper_amount: 0.05

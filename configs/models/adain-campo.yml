@@ -1,0 +1,5 @@
+# This style looks best on low- or moderate-texture scenes
+_defaults:
+  - ./adain-hat.yml
+model:
+  style_filepath: ${_original_dir}/extern/adain/input/style/en_campo_gris.jpg

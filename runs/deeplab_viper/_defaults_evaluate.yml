@@ -1,0 +1,4 @@
+_defaults:
+  - configs/evaluate/evaluate_deeplab_viper.yml
+  - configs/stabilizers/deeplab/spatial_ema_stabilizer.yml
+  - ./_finetuned_weights.yml

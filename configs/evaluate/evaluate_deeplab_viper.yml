@@ -1,0 +1,5 @@
+_defaults:
+  - ./_defaults.yml
+  - configs/metrics/_segmentation_metrics.yml
+  - configs/models/deeplab-viper.yml
+  - configs/datasets/viper_val_full.yml

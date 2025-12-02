@@ -1,0 +1,10 @@
+# Resize the smaller edge to 720.
+dataset:
+  clean_transform:
+    _target: torchvision.transforms.Resize
+    antialias: true
+    size: 720
+  corrupted_transform:
+    _target: torchvision.transforms.Resize
+    antialias: true
+    size: 720

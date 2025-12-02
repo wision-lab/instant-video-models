@@ -1,0 +1,19 @@
+_defaults:
+  - ./_defaults.yml
+  - ./_finetune.yml
+  - configs/metrics/_segmentation_metrics.yml
+  - configs/models/deeplab-viper.yml
+  - viper_train_chunk_1: configs/datasets/viper_train_chunk_1.yml
+  - viper_val: configs/datasets/viper_val.yml
+loss:
+  loss_metric:
+    _target: torch.nn.CrossEntropyLoss
+  unsqueeze: true
+train_batch_size: 16
+train_dataset: ${viper_train_chunk_1.dataset}
+train_repeats: 400
+val_batch_size: 1
+val_dataset: ${viper_val.dataset}
+
+# Note we are not masking VIPER classes with training index 255 - instead, we
+# are mapping all of them to a single "other" class at the last index position.

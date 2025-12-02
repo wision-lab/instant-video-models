@@ -1,0 +1,26 @@
+stabilizers:
+  # One stabilizer on each NAFBlock
+  - filter:
+      typename: NAFBlock
+    module:
+      _target: stability.stabilizers.simple_recurrent_conv_stabilizer.SimpleRecurrentConvStabilizer
+      conv_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on the output
+  - filter:
+      name: module
+    module:
+      _target: stability.stabilizers.simple_recurrent_conv_stabilizer.SimpleRecurrentConvStabilizer
+      conv_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+
+    # Required for parameters to be visible
+    registration_name: stabilizer

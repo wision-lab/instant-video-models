@@ -1,0 +1,24 @@
+stabilizers:
+  # One stabilizer on each NAFBlock
+  - filter:
+      typename: NAFBlock
+    module:
+      _target: stability.stabilizers.learned_ema_stabilizer.LearnedEMAStabilizer
+      channel_axis: 1
+      hook_target: output
+      logits_init: 4.0
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on the output
+  - filter:
+      name: module
+    module:
+      _target: stability.stabilizers.learned_ema_stabilizer.LearnedEMAStabilizer
+      channel_axis: 1
+      hook_target: output
+      logits_init: 4.0
+
+    # Required for parameters to be visible
+    registration_name: stabilizer

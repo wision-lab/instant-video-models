@@ -1,0 +1,13 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+_remove:
+  - input_transform
+
+input_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: stability.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.1
+    - _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
+      salt_amount: 0.05
+      pepper_amount: 0.05

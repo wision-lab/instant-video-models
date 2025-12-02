@@ -1,0 +1,11 @@
+_defaults:
+  - ./_davis.yml
+
+  # https://arxiv.org/pdf/1907.01361
+  - ./_resize_transform_480.yml
+
+  - ./_random_crop_256.yml
+
+dataset:
+  random_chunk_size: 1
+  split: train

@@ -1,0 +1,6 @@
+_defaults:
+  - ./zebra_4s.yml
+
+clip:
+  start_time: 3.0
+  end_time: 4.0

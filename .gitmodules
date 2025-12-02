@@ -1,0 +1,9 @@
+[submodule "extern/adain"]
+	path = extern/adain
+	url = https://github.com/naoto0804/pytorch-AdaIN.git
+[submodule "extern/nafnet"]
+	path = extern/nafnet
+	url = https://github.com/megvii-research/NAFNet.git
+[submodule "extern/deeplab"]
+	path = extern/deeplab
+	url = https://github.com/VainF/DeepLabV3Plus-Pytorch.git

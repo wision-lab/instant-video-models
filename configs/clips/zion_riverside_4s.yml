@@ -1,0 +1,7 @@
+clip:
+  video: ${_original_dir}/data/clips/U0C0q6BxWN4_433.0_4.0.mp4
+  crop:
+    x_min: 100
+    y_min: 300
+    x_max: 1380
+    y_max: 1020

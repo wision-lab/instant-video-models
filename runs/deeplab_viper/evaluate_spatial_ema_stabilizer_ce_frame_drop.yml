@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+dataset:
+  frame_transform:
+    _target: stability.transforms.frame_drop.FrameDrop
+    drop_ratio: 0.1

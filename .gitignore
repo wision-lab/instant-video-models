@@ -1,1 +1,16 @@
 # Sorted in ascending order
+__pycache__
+.idea
+.pytest_cache
+*.jpg
+*.png
+*.pth
+data/clips
+data/misc
+data/nfs
+data/nfs_laplacian
+data/test
+data/videos
+data/vision_sim
+outputs
+weights/hdrnet

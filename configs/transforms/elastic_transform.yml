@@ -1,0 +1,4 @@
+transforms:
+  - _target: stability.transforms.elastic_transform.ElasticTransform
+    magnitude: 50.0
+    smoothness: 5.0

@@ -1,0 +1,5 @@
+metric:
+  _target: stability.metrics.ssim.SSIM
+  max_value: 1.0
+  assume_batch_dim: true
+  convert_image_dtype: float32

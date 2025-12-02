@@ -1,0 +1,2 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml

@@ -1,0 +1,15 @@
+_chdir: true
+_output_dir: outputs/${_config_dir}/${_name}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}
+epochs: 10
+freeze_initial_params: true
+input_transform: null
+metrics: [ ]
+num_workers: 0
+optimizer:
+  _target: torch.optim.Adam
+seed: 42
+stabilizers: [ ]
+train_batch_size: 1
+train_repeats: 1
+val_batch_size: 1

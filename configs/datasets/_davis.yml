@@ -1,0 +1,8 @@
+dataset:
+  _target: stability.datasets.davis.DAVIS
+  location: ${_original_dir}/data/davis_2017
+  ending_frame: null
+  frame_transform: null
+  random_chunk_size: null
+  random_crop_size: null
+  split: train

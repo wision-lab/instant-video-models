@@ -1,0 +1,41 @@
+monitors:
+  # FlowMonitor
+  - filter:
+      name: vgg_content
+    module:
+      _target: stability.monitors.flow_monitor.FlowMonitor
+      hook_selections: { 0: 0 }
+      hook_target: inputs
+
+  # ValueMonitor
+  # All monitored modules are ReLUs
+  - filter:
+      name: vgg_content.3
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0 , 1: 0 }
+  - filter:
+      name: vgg_content.6
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0 , 1: 2 }
+  - filter:
+      name: vgg_content.10
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0 , 1: 3 }
+  - filter:
+      name: vgg_content.23
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0, 1: 5 }
+  - filter:
+      name: decoder.6
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0, 1: 8 }
+  - filter:
+      name: decoder.22
+    module:
+      _target: stability.monitors.value_monitor.ValueMonitor
+      hook_selections: { 0: 0, 1: 0 }

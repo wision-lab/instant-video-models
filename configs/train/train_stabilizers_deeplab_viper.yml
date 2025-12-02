@@ -1,0 +1,16 @@
+_defaults:
+  - ./_defaults.yml
+  - ./_train_stabilizers.yml
+  - configs/metrics/_segmentation_metrics.yml
+  - configs/models/deeplab-viper.yml
+  - viper_train_chunk_8: configs/datasets/viper_train_chunk_8.yml
+  - viper_val: configs/datasets/viper_val.yml
+loss:
+  loss_metric:
+    _target: stability.losses.cross_entropy.CrossEntropy
+    epsilon: 1e-6
+train_batch_size: 1
+train_dataset: ${viper_train_chunk_8.dataset}
+train_repeats: 40
+val_batch_size: 1
+val_dataset: ${viper_val.dataset}

@@ -1,0 +1,41 @@
+stabilizers:
+  # One stabilizer on each Conv2d layer
+  - filter:
+      typename: Conv2d
+      neg_regex: stabilizer
+    module:
+      _target: stability.stabilizers.simple_recurrent_conv_stabilizer.SimpleRecurrentConvStabilizer
+      conv_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on each Linear layer (found in the global net)
+  - filter:
+      typename: Linear
+      neg_regex: stabilizer
+    module:
+      _target: stability.stabilizers.simple_recurrent_linear_stabilizer.SimpleRecurrentLinearStabilizer
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 256
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on the output
+  - filter:
+      name: ''
+      neg_regex: stabilizer
+    module:
+      _target: stability.stabilizers.simple_recurrent_conv_stabilizer.SimpleRecurrentConvStabilizer
+      conv_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+
+    # Required for parameters to be visible
+    registration_name: stabilizer

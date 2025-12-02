@@ -1,0 +1,5 @@
+# This style works well across a range of scenes
+_defaults:
+  - ./adain-hat.yml
+model:
+  style_filepath: ${_original_dir}/extern/adain/input/style/the_resevoir_at_poitiers.jpg

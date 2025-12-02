@@ -1,0 +1,15 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - configs/stabilizers/hdrnet/spatial_ema_stabilizer.yml
+
+frame_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: torchvision.transforms.Resize
+      antialias: true
+      size: 360
+    - _target: stability.transforms.jpeg_compression.JPEGCompression
+      quality: 10
+
+dataset:
+  frame_transform: ${frame_transform}

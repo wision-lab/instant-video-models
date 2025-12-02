@@ -1,0 +1,4 @@
+_defaults:
+  - ./_nfs.yml
+  - ./_nfs_val.yml
+  - ./_resize_transform_360.yml

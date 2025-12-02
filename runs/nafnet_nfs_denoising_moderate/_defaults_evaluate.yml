@@ -1,0 +1,4 @@
+_defaults:
+  - configs/evaluate/evaluate_nafnet_nfs.yml
+  - ./_noise_moderate.yml
+  - ./_finetuned_weights.yml

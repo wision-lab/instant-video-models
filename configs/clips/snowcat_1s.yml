@@ -1,0 +1,6 @@
+_defaults:
+  - ./snowcat_4s.yml
+
+clip:
+  start_time: 7.0
+  end_time: 8.0

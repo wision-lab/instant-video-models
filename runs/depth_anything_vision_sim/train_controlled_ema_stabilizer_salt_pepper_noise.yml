@@ -1,0 +1,28 @@
+_defaults:
+  - configs/train/train_stabilizers_depth_anything_vision_sim.yml
+  - configs/stabilizers/depth_anything/controlled_ema_stabilizer.yml
+
+# Use lambda to create a subdir instead of appending to the name.
+_name: train_controlled_ema_stabilizer_salt_pepper_noise
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
+
+frame_transform:
+  _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
+  salt_amount: 0.05
+  pepper_amount: 0.05
+
+train_dataset:
+  frame_transform: ${frame_transform}
+val_dataset:
+  frame_transform: ${frame_transform}
+
+lambda: 0.2
+
+epochs: 20
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 10, 15 ]
+  gamma: 0.1

@@ -1,0 +1,4 @@
+_defaults:
+  - ./_nfs_laplacian_moderate.yml
+  - ./_nfs_val.yml
+  - ./_resize_transform_360_paired.yml

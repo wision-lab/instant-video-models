@@ -1,0 +1,6 @@
+dataset:
+  # Resize the smaller edge to 480.
+  frame_transform:
+    _target: torchvision.transforms.Resize
+    antialias: true
+    size: 480

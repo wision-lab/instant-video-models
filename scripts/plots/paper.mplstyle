@@ -1,0 +1,59 @@
+# Take a look at these styles: https://github.com/garrettj403/SciencePlots
+
+# Reference (with default values):
+# https://matplotlib.org/stable/users/explain/customizing.html#the-default-matplotlibrc-file
+
+# Constrained layout seems to be recommended over tight layout.
+# https://matplotlib.org/stable/users/explain/axes/constrainedlayout_guide.html
+figure.constrained_layout.h_pad:  0.02
+figure.constrained_layout.use: True
+figure.constrained_layout.w_pad:  0.02
+
+# Width for NeurIPS paper, height gives approximate golden ratio
+figure.figsize: 5.5, 3.4
+
+# Assume fonts are installed on the machine where the SVG will be viewed.
+svg.fonttype: path
+
+# Override the default color cycle.
+axes.prop_cycle: cycler('color', ['999999', 'aa0000', '0000aa', 'd4aa00', '8800aa', '00aa00', 'ff7f2a', '00ccff', 'd400aa'])
+
+# Fonts
+axes.titlesize: medium
+font.family: serif
+font.serif: Nimbus Roman
+font.size: 7
+legend.fontsize: medium
+mathtext.fontset: cm
+
+# Legends
+legend.borderpad: 0.4
+legend.framealpha: 0.5
+legend.handlelength: 1.0
+legend.handletextpad: 0.4
+legend.labelspacing: 0.3
+
+# Padding
+axes.labelpad: 1.0
+axes.titlepad: 3.0
+xtick.major.pad: 1.0
+xtick.minor.pad: 1.0
+ytick.major.pad: 1.0
+ytick.minor.pad: 1.0
+
+# Line widths and lengths
+axes.linewidth: 0.5
+grid.linewidth: 0.5
+lines.linewidth: 0.8
+patch.linewidth: 0.5
+xtick.major.size: 2
+xtick.major.width: 0.5
+xtick.minor.size: 1.5
+xtick.minor.width: 0.4
+ytick.major.size: 2
+ytick.major.width: 0.5
+ytick.minor.size: 1.5
+ytick.minor.width: 0.4
+
+# Marker sizes
+lines.markersize: 1.5

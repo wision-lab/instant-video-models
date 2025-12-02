@@ -1,0 +1,89 @@
+stabilizers:
+  # One stabilizer on each InvertedResidual
+  - filter:
+      typename: InvertedResidual
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      final_bias_init: -4.0
+      fusion_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: model.controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # Stabilizers on some head/classifier blocks and the model output
+  - filter:
+      name:
+        - model.classifier.aspp
+
+        # Sequential modules don't work with hooks, so select their last layers instead.
+        - model.classifier.project.2
+        - model.classifier.classifier.3
+
+        # Model output
+        - class_adapter
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      final_bias_init: -4.0
+      fusion_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    links:
+      - location: model.controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on the model input
+  # The input stabilizer can be important when dealing with corruptions.
+  - filter:
+      name: model
+    module:
+      _target: stability.stabilizers.controlled_conv_ema_stabilizer.ControlledConvEMAStabilizer
+      conv_kernel_size: 3
+      final_bias_init: -4.0
+      fusion_kernel_size: 3
+      hidden_layers: 2
+      hook_target: inputs
+      internal_channel_ratio: null
+      internal_channels: 64
+      interpolate_mode: bilinear
+      skip_connection: false
+    pre_hook: true
+    links:
+      - location: model.controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+controllers:
+  # Backbone
+  - filter:
+      name: model
+    module:
+      _target: stability.controllers.conv_backbone.ConvBackbone
+      conv_kernel_size: 3
+      hidden_layers: 6
+      hook_target: inputs
+      internal_channels: 32
+      skip_connection: false
+    pre_hook: true
+
+    # Required for parameters to be visible
+    registration_name: controller_backbone

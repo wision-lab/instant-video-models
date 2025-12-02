@@ -1,0 +1,23 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - configs/stabilizers/deeplab/controlled_ema_stabilizer.yml
+
+# Use lambda to create a subdir instead of appending to the name.
+_name: train_controlled_ema_stabilizer_ce
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
+
+epochs: 60
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 20, 40 ]
+  gamma: 0.1
+
+# Improvement in validation loss
+# Slight worsening of mean IOU, significant improvement in stability
+# Compared to RMSE:
+# - Better accuracy, cross entropy stability, and mean IOU
+# - Worse categorical and norm stability
+# Use cross entropy moving forward to minimize quality/accuracy loss

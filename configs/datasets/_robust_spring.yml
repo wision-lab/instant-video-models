@@ -1,0 +1,9 @@
+dataset:
+  _target: stability.datasets.robust_spring.SpringCorrupted
+  location: ${_original_dir}/data/robust_spring
+  clean_transform: null
+  corrupted_transform: null
+  corruption_type: null
+  random_chunk_size: null
+  random_crop_size: null
+  split_subset: null

@@ -1,0 +1,7 @@
+_defaults:
+  - ./train_spatial_ema_stabilizer_ce.yml
+  - ./_defaults_train_corruptions.yml
+_name: train_spatial_ema_stabilizer_ce_jpeg_compression
+frame_transform:
+  _target: stability.transforms.jpeg_compression.JPEGCompression
+  quality: 10

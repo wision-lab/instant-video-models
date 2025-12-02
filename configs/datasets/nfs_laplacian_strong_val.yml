@@ -1,0 +1,8 @@
+_defaults:
+  - ./_nfs_laplacian_strong.yml
+  - ./_nfs_val.yml
+  - ./_resize_transform_360_paired.yml
+
+dataset:
+  # Speed up validation by only looking at the first 64 frames from each video.
+  ending_frame: 64

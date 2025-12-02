@@ -1,0 +1,8 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
+  - configs/stabilizers/depth_anything/controlled_ema_stabilizer.yml
+
+dataset:
+  frame_transform:
+    _target: stability.transforms.frame_drop.FrameDrop
+    drop_ratio: 0.1
