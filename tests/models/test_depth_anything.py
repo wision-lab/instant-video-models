@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.models.depth_anything import DepthAnything
+from instant_video_models.models.depth_anything import DepthAnything
 
 
 def test_basic_forward():

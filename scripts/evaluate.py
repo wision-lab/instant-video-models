@@ -7,17 +7,15 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from stability.config import initialize_run, instantiate
-from stability.helpers import prepare_item, prepare_time_step
-from stability.transforms.base import initialize_transforms
-from stability.utils import (
-    add_hook_modules,
+from instant_video_models.config import initialize_run, instantiate
+from instant_video_models.helpers import prepare_item, prepare_time_step
+from instant_video_models.hooks import add_hook_modules
+from instant_video_models.utils import (
     best_pytorch_device,
     custom_collate,
     invoke_on_values,
     list_cuda_devices,
     set_random_seeds,
-    verify_invocation_count,
 )
 
 logger = logging.getLogger(__name__)
@@ -75,7 +73,7 @@ def main():
         override_weights_filepath = config["override_weights_filepath"]
         logger.info(f"Loading override weights from {override_weights_filepath}...")
 
-        # Use assign=True in case any components have uninitialized parameters.
+        # Use assign=True in case any components have uninitialized parameters
         model.load_state_dict(torch.load(override_weights_filepath), assign=True)
 
     def reset():
@@ -96,7 +94,6 @@ def main():
                 )
             for metric in metrics:
                 metric.update(prediction, ground_truth)
-            verify_invocation_count(stabilizer_dict, t + 1)
 
     logger.info("Done!")
     if len(metrics) > 0:

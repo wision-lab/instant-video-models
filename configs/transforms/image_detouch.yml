@@ -1,5 +1,5 @@
 transforms:
-  - _target: stability.transforms.image_detouch.ImageDetouch
+  - _target: instant_video_models.transforms.image_detouch.ImageDetouch
     brightness: 0.7
     contrast: 0.7
     saturation: 0.7

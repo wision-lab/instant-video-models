@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - ./_frame_drop.yml
+_remove:
+  - input_transform
+input_transform: ${frame_drop}

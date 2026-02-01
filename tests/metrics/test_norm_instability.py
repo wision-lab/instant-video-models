@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.metrics.norm_instability import NormInstability
+from instant_video_models.metrics.norm_instability import NormInstability
 
 
 @pytest.fixture

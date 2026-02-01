@@ -1,0 +1,5 @@
+lambda: 0.2
+train_dataset:
+  frame_transform: ${frame_transform}
+val_dataset:
+  frame_transform: ${frame_transform}

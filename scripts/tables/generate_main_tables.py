@@ -39,10 +39,8 @@ def write_latex_table(table_filepath, table):
     with open(table_filepath, "w") as table_file:
         for line in table:
             if isinstance(line, str):
-                # noinspection PyTypeChecker
                 print(line, file=table_file)
             else:
-                # noinspection PyTypeChecker
                 print(" & ".join(line) + r" \\", file=table_file)
 
 
@@ -69,7 +67,7 @@ def generate_denoising_table():
         table.extend(
             parse_csv_results(
                 dataset_variants,
-                "evaluate_output_ema_stabilizer",
+                "evaluate_output_simple_fixed",
                 metric_names,
                 alpha_strengths,
                 "Output EMA",
@@ -93,7 +91,7 @@ def generate_denoising_table():
         table.extend(
             parse_csv_results(
                 dataset_variants,
-                "evaluate_ema_stabilizer",
+                "evaluate_simple_fixed",
                 metric_names,
                 alpha_strengths,
                 "Internal EMA",
@@ -105,7 +103,7 @@ def generate_denoising_table():
         table.extend(
             parse_csv_results(
                 dataset_variants,
-                "evaluate_learned_ema_stabilizer",
+                "evaluate_simple_learned",
                 metric_names,
                 lambda_strengths,
                 "Learned EMA",
@@ -117,7 +115,7 @@ def generate_denoising_table():
         table.extend(
             parse_csv_results(
                 dataset_variants,
-                "evaluate_controlled_ema_stabilizer",
+                "evaluate_controlled",
                 metric_names,
                 lambda_strengths,
                 "Controlled",
@@ -129,7 +127,7 @@ def generate_denoising_table():
         table.extend(
             parse_csv_results(
                 dataset_variants,
-                "evaluate_spatial_ema_stabilizer",
+                "evaluate_controlled_spatial",
                 metric_names,
                 lambda_strengths,
                 "Spatial",
@@ -158,7 +156,7 @@ def generate_depth_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_output_ema_stabilizer",
+            "evaluate_output_simple_fixed",
             metric_names,
             alpha_strengths,
             "Output EMA",
@@ -180,7 +178,7 @@ def generate_depth_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_ema_stabilizer",
+            "evaluate_simple_fixed",
             metric_names,
             alpha_strengths,
             "EMA",
@@ -191,7 +189,7 @@ def generate_depth_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_learned_ema_stabilizer",
+            "evaluate_simple_learned",
             metric_names,
             lambda_strengths,
             "Learned",
@@ -202,7 +200,7 @@ def generate_depth_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_controlled_ema_stabilizer",
+            "evaluate_controlled",
             metric_names,
             lambda_strengths,
             "Controlled",
@@ -213,7 +211,7 @@ def generate_depth_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_spatial_ema_stabilizer",
+            "evaluate_controlled_spatial",
             metric_names,
             lambda_strengths,
             "Spatial",
@@ -240,7 +238,7 @@ def generate_laplacian_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_output_ema_stabilizer",
+            "evaluate_output_simple_fixed",
             metric_names,
             alpha_strengths,
             "Output EMA",
@@ -264,7 +262,7 @@ def generate_laplacian_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_ema_stabilizer",
+            "evaluate_simple_fixed",
             metric_names,
             alpha_strengths,
             "Internal EMA",
@@ -276,7 +274,7 @@ def generate_laplacian_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_learned_ema_stabilizer",
+            "evaluate_simple_learned",
             metric_names,
             lambda_strengths,
             "Learned EMA",
@@ -288,7 +286,7 @@ def generate_laplacian_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_controlled_ema_stabilizer",
+            "evaluate_controlled",
             metric_names,
             lambda_strengths,
             "Controlled",
@@ -300,7 +298,7 @@ def generate_laplacian_table():
     table.extend(
         parse_csv_results(
             dataset_variants,
-            "evaluate_spatial_ema_stabilizer",
+            "evaluate_controlled_spatial",
             metric_names,
             lambda_strengths,
             "Spatial",

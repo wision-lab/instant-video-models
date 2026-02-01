@@ -1,6 +1,6 @@
 freeze_initial_params: false
 loss:
-  _target: stability.metrics.frame_loss_wrapper.FrameLossWrapper
+  _target: instant_video_models.metrics.frame_loss_wrapper.FrameLossWrapper
   loss_metric:
     _target: torch.nn.MSELoss
   mask_nan: false

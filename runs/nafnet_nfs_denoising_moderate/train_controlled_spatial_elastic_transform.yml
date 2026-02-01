@@ -1,0 +1,8 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - ./train_controlled_spatial.yml
+  - ./_elastic_transform.yml
+_remove:
+  - input_transform
+input_transform: ${elastic_transform}
+lambda: 0.2

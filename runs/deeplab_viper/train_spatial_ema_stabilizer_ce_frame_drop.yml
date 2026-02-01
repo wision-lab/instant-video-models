@@ -1,7 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer_ce.yml
-  - ./_defaults_train_corruptions.yml
-_name: train_spatial_ema_stabilizer_ce_frame_drop
-frame_transform:
-  _target: stability.transforms.frame_drop.FrameDrop
-  drop_ratio: 0.1

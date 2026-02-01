@@ -3,7 +3,7 @@
 import pytest
 from torch import nn
 
-from stability.config import instantiate
+from instant_video_models.config import instantiate
 
 
 def test_instantiate_dict():

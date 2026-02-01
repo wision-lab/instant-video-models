@@ -1,5 +1,5 @@
 dataset:
-  _target: stability.datasets.davis.DAVIS
+  _target: instant_video_models.datasets.davis.DAVIS
   location: ${_original_dir}/data/davis_2017
   ending_frame: null
   frame_transform: null

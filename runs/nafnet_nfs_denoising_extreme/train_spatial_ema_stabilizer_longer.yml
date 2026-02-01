@@ -1,7 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer.yml
-_name: train_spatial_ema_stabilizer_longer
-train_dataset:
-  random_chunk_size: 16
-  random_crop_size: [ 180, 180 ]  # Approx 256 / sqrt(2)
-train_repeats: 10

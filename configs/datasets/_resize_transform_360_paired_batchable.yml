@@ -4,7 +4,7 @@ dataset:
     _target: torchvision.transforms.Compose
     transforms:
       # Make all images landscape to enable batching.
-      - _target: stability.misc.rotate_landscape.RotateLandscape
+      - _target: instant_video_models.misc.rotate_landscape.RotateLandscape
 
       # Resize from 1280x720 to 640x360 (half).
       # Some dataset images are not exactly 1280x720 - the aspect ratio of these images
@@ -17,7 +17,7 @@ dataset:
     _target: torchvision.transforms.Compose
     transforms:
       # Make all images landscape to enable batching.
-      - _target: stability.misc.rotate_landscape.RotateLandscape
+      - _target: instant_video_models.misc.rotate_landscape.RotateLandscape
 
       # Resize from 1280x720 to 640x360 (half).
       # Some dataset images are not exactly 1280x720 - the aspect ratio of these images

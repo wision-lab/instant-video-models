@@ -1,6 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer_longer_baseline.yml
-_name: train_spatial_ema_stabilizer_longer_baseline_compensated
-
-# Compensate for shorter sequences
-train_repeats: 20

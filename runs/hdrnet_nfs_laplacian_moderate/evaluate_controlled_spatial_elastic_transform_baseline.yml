@@ -1,0 +1,12 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+dataset:
+  frame_transform:
+    _target: torchvision.transforms.Compose
+    transforms:
+      - _target: torchvision.transforms.Resize
+        antialias: true
+        size: 360
+      - _target: instant_video_models.transforms.elastic_transform.ElasticTransform
+        magnitude: 50.0
+        smoothness: 5.0

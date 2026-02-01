@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults.yml
+compose_transforms:
+  - ${gaussian_noise}
+  - ${elastic_transform}
+  - ${chunk_drop}

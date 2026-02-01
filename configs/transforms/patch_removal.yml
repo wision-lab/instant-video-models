@@ -1,5 +1,5 @@
 transforms:
-  - _target: stability.transforms.patch_removal.PatchRemoval
+  - _target: instant_video_models.transforms.patch_removal.PatchRemoval
     min_number: 1
     max_number: 8
     min_size: 40

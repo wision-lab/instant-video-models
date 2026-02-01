@@ -1,7 +1,7 @@
 _defaults:
   - adversarial_model: ../models/resnet.yml
 transforms:
-  - _target: stability.transforms.adversarial.IterativeFGSMAttack
+  - _target: instant_video_models.transforms.adversarial.IterativeFGSMAttack
     model: ${adversarial_model.model}
     device: cuda
     epsilon: 0.5

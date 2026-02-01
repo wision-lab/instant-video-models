@@ -3,7 +3,7 @@
 import matplotlib as mpl
 import pytest
 
-from stability.utils import ColorGenerator
+from instant_video_models.utils import ColorGenerator
 
 
 def test_color_generator():

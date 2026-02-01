@@ -1,7 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-  - configs/stabilizers/hdrnet/simple_recurrent_stabilizer.yml
-
-# Use lambda to create a subdir instead of appending to the name.
-_name: evaluate_simple_recurrent_stabilizer
-_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}

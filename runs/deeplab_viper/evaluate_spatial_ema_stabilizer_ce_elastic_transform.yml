@@ -1,7 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-dataset:
-  frame_transform:
-    _target: stability.transforms.elastic_transform.ElasticTransform
-    magnitude: 50.0
-    smoothness: 5.0

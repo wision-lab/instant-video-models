@@ -1,6 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-dataset:
-  frame_transform:
-    _target: stability.transforms.jpeg_compression.JPEGCompression
-    quality: 10

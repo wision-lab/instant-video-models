@@ -8,7 +8,7 @@ def parse_csv_results(c, suffix=""):
     evaluation_dirpath = Path(
         "outputs",
         "nafnet_robust_spring_denoising_moderate",
-        f"evaluate_spatial_ema_stabilizer_{c}{suffix}",
+        f"evaluate_controlled_spatial_{c}{suffix}",
     )
     metrics = {}
     for run_dirpath in reversed(sorted(evaluation_dirpath.iterdir())):

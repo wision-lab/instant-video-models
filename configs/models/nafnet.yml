@@ -1,5 +1,5 @@
 _defaults:
   - ../visualizers/image.yml
 model:
-  _target: stability.models.nafnet.NAFNet
+  _target: instant_video_models.models.nafnet.NAFNet
   weights_filepath: ${_original_dir}/weights/nafnet/nafnet_sidd_width32.pth

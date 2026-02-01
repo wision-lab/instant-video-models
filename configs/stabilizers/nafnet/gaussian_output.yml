@@ -1,0 +1,9 @@
+sigma: 0.9
+stabilizers:
+  - filter:
+      # Model output
+      typename: DepthAnythingDepthEstimationHead
+    module:
+      _target: instant_video_models.stabilizers.gaussian_stabilizer.GaussianStabilizer
+      sigma: ${....sigma}
+      window_size: 20

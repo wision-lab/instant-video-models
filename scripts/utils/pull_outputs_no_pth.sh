@@ -13,5 +13,5 @@ do
   # PyCharm uses -zar by default
   # Use the --update option to prevent overwriting newer results with older ones
   # Ignore .pth files (weights and checkpoints)
-  rsync -zar --progress --update "$host:stability/outputs" . --exclude "*.pth"
+  rsync -zar --progress --update "$host:instant-video-models/outputs" . --exclude "*.pth"
 done

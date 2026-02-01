@@ -1,5 +1,0 @@
-_defaults:
-  - ./evaluate_spatial_ema_stabilizer.yml
-_name: evaluate_spatial_ema_stabilizer_longer
-lambda: 0.4
-override_weights_filepath: ${_original_dir}/outputs/nafnet_nfs_denoising_extreme/train_spatial_ema_stabilizer_longer/0.4/2025_07_28-22_39_04/weights_best.pth

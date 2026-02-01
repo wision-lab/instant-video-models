@@ -8,7 +8,7 @@ def main():
     result_dir = Path(
         "outputs",
         "nafnet_nfs_denoising_moderate",
-        "train_learned_ema_stabilizer",
+        "train_simple_learned",
         "0.2",
     )
     print("| Module name | Feature dimension | Logit mean |")

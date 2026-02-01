@@ -1,0 +1,5 @@
+_defaults:
+  - ./evaluate_controlled_spatial_rain_unfrozen.yml
+controllers: [ ]
+stabilizers: [ ]
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

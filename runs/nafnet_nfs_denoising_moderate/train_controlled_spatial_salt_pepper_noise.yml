@@ -1,0 +1,8 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - ./train_controlled_spatial.yml
+  - ./_salt_pepper_noise.yml
+_remove:
+  - input_transform
+input_transform: ${salt_pepper_noise}
+lambda: 0.2

@@ -1,5 +1,5 @@
 metric:
-  _target: stability.metrics.norm_instability.NormInstability
+  _target: instant_video_models.metrics.norm_instability.NormInstability
   assume_batch_dim: true
   mask_nan: true
   norm_dims: null

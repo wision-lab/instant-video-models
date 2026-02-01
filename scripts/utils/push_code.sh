@@ -17,7 +17,7 @@ do
   # - The .gitmodules file (meaningless without .git)
   # - The data, outputs, and weights directories (to avoid remote deletions)
   # - Anything excluded by .gitignore
-  rsync -zar --progress --delete . "$host:stability" \
+  rsync -zar --progress --delete . "$host:instant-video-models" \
     --exclude '/.git' \
     --exclude '/.gitmodules' \
     --exclude '/data' \

@@ -1,4 +1,4 @@
 metric:
-  _target: stability.metrics.mean_iou.MeanIOU
+  _target: instant_video_models.metrics.mean_iou.MeanIOU
   assume_batch_dim: true
   class_dim: 0

@@ -1,0 +1,25 @@
+alpha: 0.9
+stabilizers:
+  # One stabilizer on each Conv2d layer
+  - filter:
+      typename: Conv2d
+    module:
+      _target: instant_video_models.stabilizers.simple_fixed_stabilizer.SimpleFixedStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+  # One stabilizer on each Linear layer (found in the global net)
+  - filter:
+      typename: Linear
+    module:
+      _target: instant_video_models.stabilizers.simple_fixed_stabilizer.SimpleFixedStabilizer
+      alpha: ${....alpha}
+      hook_target: output
+
+  # One stabilizer on the output
+  - filter:
+      name: ''
+    module:
+      _target: instant_video_models.stabilizers.simple_fixed_stabilizer.SimpleFixedStabilizer
+      alpha: ${....alpha}
+      hook_target: output

@@ -1,7 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-  - configs/stabilizers/nafnet/ema_stabilizer.yml
-
-# Use alpha to create a subdir instead of appending to the name.
-_name: evaluate_ema_stabilizer
-_output_dir: outputs/${_config_dir}/${_name}/${alpha}/${_datetime}

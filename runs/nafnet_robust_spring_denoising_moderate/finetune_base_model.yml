@@ -1,7 +1,7 @@
 _defaults:
   - configs/train/finetune_nafnet_robust_spring.yml
 input_transform:
-  _target: stability.transforms.gaussian_noise.GaussianNoise
+  _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
   sigma: 0.1
 epochs: 20
 optimizer:
@@ -10,5 +10,3 @@ scheduler:
   _target: torch.optim.lr_scheduler.MultiStepLR
   milestones: [ 10, 15 ]
   gamma: 0.1
-
-# Learning curves look great

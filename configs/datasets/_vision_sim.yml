@@ -1,5 +1,5 @@
 dataset:
-  _target: stability.datasets.vision_sim.VisionSim
+  _target: instant_video_models.datasets.vision_sim.VisionSim
   location: ${_original_dir}/data/vision_sim
   depth_nan_threshold: 1e9
   ending_frame: null

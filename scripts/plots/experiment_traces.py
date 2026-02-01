@@ -37,11 +37,11 @@ def plot_nfs_denoising_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "nafnet_nfs_denoising_moderate")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     axs[0].plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),
@@ -79,11 +79,11 @@ def plot_nfs_denoising_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "nafnet_nfs_denoising_strong")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     axs[1].plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),
@@ -119,11 +119,11 @@ def plot_nfs_denoising_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "nafnet_nfs_denoising_extreme")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     axs[2].plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),
@@ -177,11 +177,11 @@ def plot_davis_denoising_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "nafnet_davis_denoising")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     ax.plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),
@@ -233,11 +233,11 @@ def plots_laplacian_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "hdrnet_nfs_laplacian_moderate")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     axs[0].plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),
@@ -277,11 +277,11 @@ def plots_laplacian_traces(plots_dirpath):
 
     experiments_dirpath = Path("outputs", "hdrnet_nfs_laplacian_strong")
     base_model_dirpath = experiments_dirpath / "evaluate_base_model"
-    output_ema_dirpath = experiments_dirpath / "evaluate_output_ema_stabilizer"
-    ema_dirpath = experiments_dirpath / "evaluate_ema_stabilizer"
-    learned_ema_dirpath = experiments_dirpath / "evaluate_learned_ema_stabilizer"
-    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled_ema_stabilizer"
-    spatial_ema_dirpath = experiments_dirpath / "evaluate_spatial_ema_stabilizer"
+    output_ema_dirpath = experiments_dirpath / "evaluate_output_simple_fixed"
+    ema_dirpath = experiments_dirpath / "evaluate_simple_fixed"
+    learned_ema_dirpath = experiments_dirpath / "evaluate_simple_learned"
+    controlled_ema_dirpath = experiments_dirpath / "evaluate_controlled"
+    spatial_ema_dirpath = experiments_dirpath / "evaluate_controlled_spatial"
     axs[1].plot(
         parse_csv_results(base_model_dirpath, "NormStability", nested=False),
         parse_csv_results(base_model_dirpath, "PSNR", nested=False),

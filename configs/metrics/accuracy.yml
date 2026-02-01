@@ -1,5 +1,5 @@
 metric:
-  _target: stability.metrics.accuracy.Accuracy
+  _target: instant_video_models.metrics.accuracy.Accuracy
   assume_batch_dim: true
   class_dim: -3
   mask_nan: false

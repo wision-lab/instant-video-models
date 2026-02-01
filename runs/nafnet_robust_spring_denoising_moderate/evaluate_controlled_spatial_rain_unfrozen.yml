@@ -1,0 +1,3 @@
+_defaults:
+  - ./evaluate_controlled_spatial_rain.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

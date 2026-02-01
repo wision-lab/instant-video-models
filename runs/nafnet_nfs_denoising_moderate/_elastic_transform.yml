@@ -1,0 +1,8 @@
+elastic_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.1
+    - _target: instant_video_models.transforms.elastic_transform.ElasticTransform
+      magnitude: 50.0
+      smoothness: 5.0

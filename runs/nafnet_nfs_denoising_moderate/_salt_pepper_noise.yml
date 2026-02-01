@@ -1,0 +1,8 @@
+salt_pepper_noise:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.1
+    - _target: instant_video_models.transforms.salt_pepper_noise.SaltPepperNoise
+      salt_amount: 0.05
+      pepper_amount: 0.05

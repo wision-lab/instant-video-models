@@ -1,4 +1,0 @@
-_defaults:
-  - configs/process/process_nafnet.yml
-  - ./_noise_strong.yml
-  - ./_finetuned_weights.yml

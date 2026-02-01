@@ -2,7 +2,7 @@
 _defaults:
   - ../visualizers/image.yml
 model:
-  _target: stability.models.adain.AdaIN
+  _target: instant_video_models.models.adain.AdaIN
   style_filepath: ${_original_dir}/extern/adain/input/style/woman_with_hat_matisse.jpg
   style_size: 720
   weights_filepath: ${_original_dir}/weights/adain/adain.pth

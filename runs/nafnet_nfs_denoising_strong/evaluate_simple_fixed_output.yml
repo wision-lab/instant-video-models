@@ -1,0 +1,4 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - configs/stabilizers/nafnet/simple_fixed_output.yml
+_output_dir: outputs/${_config_dir}/${_name}/${alpha}/${_datetime}

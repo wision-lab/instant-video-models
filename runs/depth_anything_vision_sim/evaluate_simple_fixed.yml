@@ -1,0 +1,4 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
+  - configs/stabilizers/depth_anything/simple_fixed.yml
+_output_dir: outputs/${_config_dir}/${_name}/${alpha}/${_datetime}

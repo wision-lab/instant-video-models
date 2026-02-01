@@ -1,14 +1,17 @@
 _defaults:
-  - ./_defaults.yml
+  - ./_defaults.yml 
   - ./_train_stabilizers.yml
   - configs/metrics/_depth_metrics.yml
   - configs/models/depth_anything.yml
   - vision_sim_train_chunk_8: configs/datasets/vision_sim_train_chunk_8.yml
   - vision_sim_val: configs/datasets/vision_sim_val.yml
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
+lambda: 0.4
 loss:
   mask_nan: true
 postprocess_transform:
-  _target: stability.utils.AffineAlignPredictions
+  _target: instant_video_models.utils.AffineAlignPredictions
   mask_nan: true
 train_batch_size: 1
 train_dataset: ${vision_sim_train_chunk_8.dataset}

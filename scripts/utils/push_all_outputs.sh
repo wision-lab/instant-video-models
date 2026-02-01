@@ -12,5 +12,5 @@ do
 
   # PyCharm uses -zar by default
   # Use the --update option to prevent overwriting newer results with older ones
-  rsync -zar --progress --update outputs "$host:stability"
+  rsync -zar --progress --update outputs "$host:instant-video-models"
 done

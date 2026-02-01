@@ -1,5 +1,5 @@
 _defaults:
-  - ./_defaults.yml
+  - ./_defaults.yml 
   - ./_finetune.yml
   - configs/metrics/_segmentation_metrics.yml
   - configs/models/deeplab-viper.yml

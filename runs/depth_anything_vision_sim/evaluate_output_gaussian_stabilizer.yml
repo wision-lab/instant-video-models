@@ -1,7 +1,0 @@
-_defaults:
-  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
-  - configs/stabilizers/depth_anything/output_gaussian_stabilizer.yml
-
-# Use sigma to create a subdir instead of appending to the name.
-_name: evaluate_output_gaussian_stabilizer
-_output_dir: outputs/${_config_dir}/${_name}/${sigma}/${_datetime}

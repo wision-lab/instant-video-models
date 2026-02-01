@@ -1,0 +1,4 @@
+_defaults:
+  - ./evaluate_controlled_spatial_chunk_drop_baseline.yml
+  - configs/stabilizers/deeplab/controlled_spatial.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

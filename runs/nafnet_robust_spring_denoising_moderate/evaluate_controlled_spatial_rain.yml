@@ -1,0 +1,4 @@
+_defaults:
+  - ./evaluate_controlled_spatial_rain_baseline.yml
+  - configs/stabilizers/nafnet/controlled_spatial.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

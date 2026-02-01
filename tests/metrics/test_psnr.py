@@ -4,7 +4,7 @@ import pytest
 import torch
 from torchmetrics.functional.image import peak_signal_noise_ratio
 
-from stability.metrics.psnr import PSNR
+from instant_video_models.metrics.psnr import PSNR
 
 
 def test_psnr():

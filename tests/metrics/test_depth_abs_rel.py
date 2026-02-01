@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.metrics.depth_abs_rel import DepthAbsRel
+from instant_video_models.metrics.depth_abs_rel import DepthAbsRel
 
 
 def test_depth_abs_rel():

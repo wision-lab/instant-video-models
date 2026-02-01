@@ -1,5 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer_jpeg_compression.yml
-  - configs/stabilizers/nafnet/controlled_ema_stabilizer_composable.yml
-
-_name: train_spatial_ema_stabilizer_jpeg_compression_composable

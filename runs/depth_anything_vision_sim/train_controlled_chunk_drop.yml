@@ -1,0 +1,7 @@
+_defaults:
+  - ./train_controlled.yml
+  - ./_defaults_train_corruptions.yml
+frame_transform:
+  _target: instant_video_models.transforms.chunk_drop.ChunkDrop
+  chunk_size: 8
+  drop_ratio: 0.1

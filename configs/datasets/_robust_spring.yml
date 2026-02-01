@@ -1,5 +1,5 @@
 dataset:
-  _target: stability.datasets.robust_spring.SpringCorrupted
+  _target: instant_video_models.datasets.robust_spring.SpringCorrupted
   location: ${_original_dir}/data/robust_spring
   clean_transform: null
   corrupted_transform: null

@@ -5,7 +5,7 @@ import math
 import pytest
 import torch
 
-from stability.metrics.transport_instability import (
+from instant_video_models.metrics.transport_instability import (
     TransportInstability,
     transport_distance,
 )

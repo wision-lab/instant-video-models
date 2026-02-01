@@ -1,7 +1,6 @@
 _defaults:
   - configs/train/finetune_nafnet_davis.yml
   - ./_noise_40.yml
-
 epochs: 20
 optimizer:
   lr: 1e-4

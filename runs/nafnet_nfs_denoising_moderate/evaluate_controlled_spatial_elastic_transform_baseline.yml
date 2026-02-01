@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - ./_elastic_transform.yml
+_remove:
+  - input_transform
+input_transform: ${elastic_transform}

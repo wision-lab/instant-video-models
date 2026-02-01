@@ -1,0 +1,4 @@
+_defaults:
+  - ./train_controlled_spatial_snow_unfrozen.yml
+controllers: [ ]
+stabilizers: [ ]

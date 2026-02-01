@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - ./_jpeg_compression.yml
+_remove:
+  - input_transform
+input_transform: ${jpeg_compression}

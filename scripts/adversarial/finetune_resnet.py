@@ -13,9 +13,9 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import models, transforms
 from tqdm import tqdm
 
-from stability.config import initialize_run
-from stability.datasets.custom import CustomClassificationDataset
-from stability.utils import set_random_seeds, MeanValue
+from instant_video_models.config import initialize_run
+from instant_video_models.datasets.custom import CustomClassificationDataset
+from instant_video_models.utils import set_random_seeds, MeanValue
 
 
 def create_transforms(config):

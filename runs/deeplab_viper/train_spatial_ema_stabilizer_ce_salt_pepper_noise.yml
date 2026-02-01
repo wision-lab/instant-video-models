@@ -1,8 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer_ce.yml
-  - ./_defaults_train_corruptions.yml
-_name: train_spatial_ema_stabilizer_ce_salt_pepper_noise
-frame_transform:
-  _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
-  salt_amount: 0.05
-  pepper_amount: 0.05

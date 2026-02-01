@@ -8,38 +8,41 @@ from tempfile import mkdtemp
 import streamlit as st
 import torch
 from omegaconf import DictConfig, OmegaConf
+from torch import nn
+from torchvision.transforms import v2 as tf
 from torchvision.transforms.v2.functional import convert_image_dtype
 from torchvision.utils import flow_to_image
 
-from stability.config import (
+from instant_video_models.config import (
     configure_loggers,
     instantiate,
     list_config_names,
     load_config,
 )
-from stability.transforms.base import initialize_transforms
-from stability.utils import (
-    add_hook_modules,
+from instant_video_models.hooks import add_hook_modules
+from instant_video_models.utils import (
     best_pytorch_device,
     invoke_on_values,
     load_clip,
     save_video,
     set_random_seeds,
     stack_videos,
-    verify_invocation_count,
     visualize_with_cmap,
 )
 
 logger = logging.getLogger(__name__)
 
 # Use next(widget_keys) to get a unique widget key if Streamlit gives a
-# DuplicateWidgetID exception.
+# DuplicateWidgetID exception
 widget_keys = (i for i in range(100_000))
 
 
 @st.cache_data(max_entries=10, show_spinner=False)
 def cached_initialize_transforms(transform_configs):
-    return initialize_transforms(transform_configs)
+    if len(transform_configs) != 0:
+        return tf.Compose(instantiate(transform_configs))
+    else:
+        return nn.Identity()
 
 
 @st.cache_data(max_entries=10, show_spinner=False)
@@ -150,7 +153,7 @@ def generate_results(run_config, tmp_dir):
         override_weights_filepath = run_config["override_weights_filepath"]
         logger.info(f"Loading override weights from {override_weights_filepath}...")
 
-        # Use assign=True in case any components have uninitialized parameters.
+        # Use assign=True in case any components have uninitialized parameters
         model.load_state_dict(torch.load(override_weights_filepath), assign=True)
 
     results = {"clip": clip, "fps": fps}
@@ -211,7 +214,7 @@ def generate_result_videos(run_config, result_video_config, tmp_dir, _results):
     progress_text = "Generating result videos"
     progress_bar = st.progress(0.0, text=progress_text)
 
-    # Save the input video.
+    # Save the input video
     output_fps = _results["fps"] * result_video_config["speed"]
     save_video(
         tmp_dir / "input.mp4",
@@ -223,7 +226,7 @@ def generate_result_videos(run_config, result_video_config, tmp_dir, _results):
     i += 1
     progress_bar.progress(i / n_videos, text=progress_text)
 
-    # Save the unstabilized/stabilized outputs.
+    # Save the unstabilized/stabilized outputs
     full = _results["unstabilized"]["annotated"]
     if "stabilized" in _results:
         full = torch.cat([full, _results["stabilized"]["annotated"]], dim=-2)
@@ -237,12 +240,12 @@ def generate_result_videos(run_config, result_video_config, tmp_dir, _results):
     i += 1
     progress_bar.progress(i / n_videos, text=progress_text)
 
-    # Create a legend for output annotations.
+    # Create a legend for output annotations
     if _results["legend"] is not None:
         with open(tmp_dir / "legend.html", "w") as legend_file:
             legend_file.write(_results["legend"])
 
-    # Save the unstabilized/stabilized monitors.
+    # Save the unstabilized/stabilized monitors
     monitors_dir = tmp_dir / "monitors"
     monitors_dir.mkdir()
     for key, unstabilized in _results["unstabilized"]["history"].items():
@@ -267,7 +270,6 @@ def generate_result_videos(run_config, result_video_config, tmp_dir, _results):
     progress_bar.empty()
 
 
-# noinspection PyDictCreation
 def get_comparison_video_config():
     config = {}
     config["size"] = st.number_input(
@@ -277,7 +279,6 @@ def get_comparison_video_config():
     return config
 
 
-# noinspection PyDictCreation
 def get_output_config():
     config = {}
     config["output_dir"] = st.text_input("Location", value=Path("outputs", "dashboard"))
@@ -285,7 +286,6 @@ def get_output_config():
     return config
 
 
-# noinspection PyDictCreation
 def get_result_video_config():
     config = {}
     config["speed"] = st.selectbox(
@@ -309,9 +309,6 @@ def get_result_video_config():
             "veryslow",
         ],
         index=1,
-    )
-    config["plot_dpi"] = st.number_input(
-        "Metric plot DPI", min_value=50, max_value=500, value=100, step=50
     )
     return config
 
@@ -337,7 +334,7 @@ def get_run_config():
     model_dir = Path("configs", "models")
     model_options = list_config_names(model_dir)
     model_id = st.selectbox(
-        "Model", model_options, index=model_options.index("adain-reservoir_720")
+        "Model", model_options, index=model_options.index("adain-reservoir")
     )
     model_base = model_id.split("-")[0]
     config = OmegaConf.merge(config, load_config(model_dir / f"{model_id}.yml"))
@@ -390,9 +387,8 @@ def process_clip(
                 history_partial[key].append(monitor.retrieve().cpu())
             else:
                 history_skipped[key].add(t)
-        verify_invocation_count(stabilizer_dict, t + 1)
 
-    # Add zero values to monitors for skipped time steps.
+    # Add zero values to monitors for skipped time steps
     history = fill_skipped_steps(history_partial, history_skipped, clip.shape[0], 0)
 
     progress_bar.empty()
@@ -412,7 +408,7 @@ def main():
         with st.expander("Comparison video", expanded=True):
             comparison_video_config = get_comparison_video_config()
 
-    # Once per session, create a unique temporary directory. Save all results here.
+    # Once per session, create a unique temporary directory for saving results
     base_path = Path("outputs", "dashboard_tmp")
     base_path.mkdir(parents=True, exist_ok=True)
     if "tmp_dir" not in st.session_state:
@@ -447,7 +443,7 @@ def main():
     results = generate_results(run_config, tmp_dir)
     generate_result_videos(run_config, result_video_config, tmp_dir, results)
 
-    # Used to remove common prefixes when displaying keys (better readability).
+    # Used to remove common prefixes when displaying keys (better readability)
     prefix_size = common_prefix_size(list(results["unstabilized"]["history"].keys()))
 
     # Controls in-browser video rendering
@@ -456,16 +452,15 @@ def main():
         unsafe_allow_html=True,
     )
 
-    # Video filenames that should be stacked together for comparison.
+    # Video filenames that should be stacked together for comparison
     comparison_list = []
 
     tab_1, tab_2 = st.tabs(["Results", "Comparison"])
 
-    # Show the results.
     with tab_1:
-        col_1, col_2, col_3 = st.columns(3)
+        col_1, col_2 = st.columns(2)
 
-        # Show the input video and unstabilized/stabilized outputs.
+        # Show the input video and unstabilized/stabilized outputs
         with col_1:
             st.header("Input and Outputs")
             with st.expander("Input"):
@@ -484,7 +479,7 @@ def main():
                         legend = legend_file.read()
                     st.markdown(legend, unsafe_allow_html=True)
 
-        # Show the unstabilized/stabilized monitors.
+        # Show the unstabilized/stabilized monitors
         with col_2:
             st.header("Monitors")
             monitors_dir = tmp_dir / "monitors"
@@ -504,7 +499,7 @@ def main():
         comparison_list,
     )
 
-    # Show the comparison video.
+    # Show the comparison video
     with tab_2:
         filename = tmp_dir / "comparison.mp4"
         if filename.exists():
@@ -512,7 +507,7 @@ def main():
         else:
             st.markdown("Select two or more result videos to compare.")
 
-    # Copy results to a permanent location.
+    # Copy results to a permanent location
     if output_config["save_outputs"]:
         output_dir = Path(
             output_config["output_dir"], datetime.now().strftime("%Y_%m_%d-%H_%M_%S")

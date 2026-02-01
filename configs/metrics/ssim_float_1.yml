@@ -1,5 +1,5 @@
 metric:
-  _target: stability.metrics.ssim.SSIM
+  _target: instant_video_models.metrics.ssim.SSIM
   max_value: 1.0
   assume_batch_dim: true
   convert_image_dtype: float32

@@ -1,7 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-dataset:
-  frame_transform:
-    _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
-    salt_amount: 0.05
-    pepper_amount: 0.05

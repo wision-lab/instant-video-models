@@ -1,0 +1,5 @@
+_defaults:
+  - ./train_controlled_spatial_longer.yml
+train_dataset:
+  random_chunk_size: 8
+train_repeats: 20

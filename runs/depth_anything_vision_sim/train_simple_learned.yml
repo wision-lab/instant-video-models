@@ -1,0 +1,10 @@
+_defaults:
+  - configs/train/train_stabilizers_depth_anything_vision_sim.yml
+  - configs/stabilizers/depth_anything/simple_learned.yml
+epochs: 40
+optimizer:
+  lr: 1e-3
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 20, 30 ]
+  gamma: 0.1

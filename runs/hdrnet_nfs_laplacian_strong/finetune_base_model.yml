@@ -1,6 +1,5 @@
 _defaults:
   - configs/train/finetune_hdrnet_nfs_laplacian_strong.yml
-
 epochs: 80
 optimizer:
   lr: 1e-4

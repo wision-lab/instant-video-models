@@ -4,7 +4,7 @@ from pathlib import Path
 
 import torch
 
-from stability.models.adain import VGG_LAYERS
+from instant_video_models.models.adain import VGG_LAYERS
 
 
 def main():

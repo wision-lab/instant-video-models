@@ -1,4 +1,4 @@
-name: stability
+name: instant-video-models
 channels:
   - defaults
 dependencies:

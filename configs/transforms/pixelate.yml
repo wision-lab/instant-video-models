@@ -1,3 +1,3 @@
 transforms:
-  - _target: stability.transforms.pixelate.Pixelate
+  - _target: instant_video_models.transforms.pixelate.Pixelate
     quality: 0.25

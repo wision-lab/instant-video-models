@@ -4,7 +4,7 @@ import pytest
 import torch
 from torchmetrics.functional.image import structural_similarity_index_measure
 
-from stability.metrics.ssim import SSIM
+from instant_video_models.metrics.ssim import SSIM
 
 
 @pytest.fixture

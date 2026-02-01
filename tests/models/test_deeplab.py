@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.models.deeplab import Deeplab
+from instant_video_models.models.deeplab import Deeplab
 
 
 def test_basic_forward():

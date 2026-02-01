@@ -1,0 +1,4 @@
+_defaults:
+  - ./_defaults_evaluate_lambda.yml
+  - configs/stabilizers/depth_anything/controlled_spatial.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

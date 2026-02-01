@@ -1,7 +1,7 @@
 _defaults:
   - ../visualizers/none.yml
 model:
-  _target: stability.models.resnet.Resnet
+  _target: instant_video_models.models.resnet.Resnet
   input_size: [ 224, 224 ]
   n_classes: 2
   normalize_mean: [ 0.485, 0.456, 0.406 ]

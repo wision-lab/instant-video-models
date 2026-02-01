@@ -1,7 +1,7 @@
 _defaults:
   - ../visualizers/segmentation.yml
 model:
-  _target: stability.models.deeplab.Deeplab
+  _target: instant_video_models.models.deeplab.Deeplab
   adapted_classes: null
   model_name: deeplabv3plus_mobilenet
   native_classes: 19

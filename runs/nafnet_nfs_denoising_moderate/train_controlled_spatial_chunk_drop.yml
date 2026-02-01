@@ -1,0 +1,8 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - ./train_controlled_spatial.yml
+  - ./_chunk_drop.yml
+_remove:
+  - input_transform
+input_transform: ${chunk_drop}
+lambda: 0.2

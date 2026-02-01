@@ -6,10 +6,10 @@ set -e
 # cd to the project root directory
 cd "$(dirname "${BASH_SOURCE[0]}")/../.."
 
-# Move to the dataset directory.
+# Move to the dataset directory
 cd data/viper
 
-# Unpack images and annotations.
+# Unpack images and annotations
 for zip_filename in *.zip
 do
   completed_filename=${zip_filename}.completed

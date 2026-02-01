@@ -6,7 +6,7 @@ set -e
 # cd to the project root directory
 cd "$(dirname "${BASH_SOURCE[0]}")/../.."
 
-# cd to the vision_sim render directory.
+# cd to the vision_sim render directory
 cd data/vision_sim/renders
 
 for scene in kitchen1 interior-scene loft bathroom2 cocina-ii bathroom5 italianflat restroom minimarket bath

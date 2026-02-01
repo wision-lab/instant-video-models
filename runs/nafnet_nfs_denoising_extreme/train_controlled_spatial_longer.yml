@@ -1,0 +1,6 @@
+_defaults:
+  - ./train_controlled_spatial.yml
+train_dataset:
+  random_chunk_size: 16
+  random_crop_size: [ 180, 180 ]  # Approx 256 / sqrt(2)
+train_repeats: 10

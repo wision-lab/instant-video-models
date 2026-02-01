@@ -1,3 +1,2 @@
 _defaults:
-  - configs/evaluate/evaluate_deeplab_viper.yml
-  - ./_finetuned_weights.yml
+  - ./_defaults_evaluate.yml

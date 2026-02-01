@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate_lambda.yml
+dataset:
+  frame_transform:
+    _target: instant_video_models.transforms.jpeg_compression.JPEGCompression
+    quality: 10

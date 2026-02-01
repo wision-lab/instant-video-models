@@ -1,0 +1,3 @@
+_defaults:
+  - configs/evaluate/evaluate_depth_anything_vision_sim.yml
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}

@@ -24,7 +24,7 @@ def main():
                 base_dirpath = Path(
                     "outputs",
                     "nafnet_nfs_denoising_moderate",
-                    f"train_spatial_ema_stabilizer_{c}_composable",
+                    f"train_controlled_spatial_{c}_composable",
                     "0.2",
                 )
                 input_filepath = sorted(base_dirpath.iterdir())[-1] / "weights_best.pth"

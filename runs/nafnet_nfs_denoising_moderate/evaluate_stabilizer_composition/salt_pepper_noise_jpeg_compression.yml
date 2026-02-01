@@ -1,7 +1,4 @@
 _defaults:
-  - ./_defaults.yml
-
-compose_transforms:
-  - ${gaussian_noise}
-  - ${salt_pepper_noise}
-  - ${jpeg_compression}
+  - ./salt_pepper_noise_jpeg_compression_baseline.yml
+  - configs/stabilizers/nafnet/controlled_composed.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

@@ -1,0 +1,41 @@
+stabilizers:
+  # One conv stabilizer on each DepthAnythingReassembleLayer,
+  # DepthAnythingFeatureFusionLayer, and DepthAnythingDepthEstimationHead
+  - filter:
+      typename:
+        - DepthAnythingReassembleLayer
+        - DepthAnythingFeatureFusionLayer
+
+        # Model output
+        - DepthAnythingDepthEstimationHead
+    module:
+      _target: instant_video_models.stabilizers.controlled_conv_stabilizer.ControlledConvStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: false
+      final_bias_init: -4.0
+      fusion_kernel_size: 3
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 32
+      interpolate_mode: bilinear
+    links:
+      - location: model.backbone.controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+controllers:
+  # Backbone
+  - filter:
+      name: model.backbone
+    module:
+      _target: instant_video_models.controllers.conv_backbone.ConvBackbone
+      conv_kernel_size: 3
+      hidden_layers: 6
+      hook_target: inputs
+      internal_channels: 16
+    pre_hook: true
+
+    # Required for parameters to be visible
+    registration_name: controller_backbone

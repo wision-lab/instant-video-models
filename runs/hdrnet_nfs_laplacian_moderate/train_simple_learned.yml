@@ -1,0 +1,10 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - configs/stabilizers/hdrnet/simple_learned.yml
+epochs: 20
+optimizer:
+  lr: 1e-3
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 10, 15 ]
+  gamma: 0.1

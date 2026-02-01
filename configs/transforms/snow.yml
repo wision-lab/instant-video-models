@@ -1,5 +1,5 @@
 transforms:
-  - _target: stability.transforms.snow.Snow
+  - _target: instant_video_models.transforms.snow.Snow
     min_density: 5e-5
     max_density: 1e-4
     min_size: 5.0

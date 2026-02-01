@@ -1,2 +1,2 @@
 model:
-  weights_filepath: ${_original_dir}/outputs/deeplab_viper/finetune_base_model/2025_07_09-12_27_35/weights_best.pth
+  weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

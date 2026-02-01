@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - ./_salt_pepper_noise.yml
+_remove:
+  - input_transform
+input_transform: ${salt_pepper_noise}

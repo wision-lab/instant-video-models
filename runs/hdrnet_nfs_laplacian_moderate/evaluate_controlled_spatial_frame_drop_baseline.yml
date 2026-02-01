@@ -1,0 +1,11 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+dataset:
+  frame_transform:
+    _target: torchvision.transforms.Compose
+    transforms:
+      - _target: torchvision.transforms.Resize
+        antialias: true
+        size: 360
+      - _target: instant_video_models.transforms.frame_drop.FrameDrop
+        drop_ratio: 0.1

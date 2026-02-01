@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from stability.models.nafnet import NAFNet
+from instant_video_models.models.nafnet import NAFNet
 
 
 @pytest.fixture

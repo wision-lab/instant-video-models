@@ -3,5 +3,13 @@
         "./extern/adain",
         "./extern/deeplab",
         "./extern/nafnet"
+    ],
+    "cSpell.words": [
+        "adain",
+        "deeplab",
+        "finetune",
+        "hdrnet",
+        "hookable",
+        "nafnet",
     ]
 }

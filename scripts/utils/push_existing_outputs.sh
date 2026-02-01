@@ -24,5 +24,5 @@ do
   # Use the --update option to prevent overwriting newer results with older ones
   # Use the --delete option to delete remote files that don't exist locally
   # Use the --existing option to skip creating new remote files
-  rsync -zar --progress --update --delete --existing outputs "$host:stability"
+  rsync -zar --progress --update --delete --existing outputs "$host:instant-video-models"
 done

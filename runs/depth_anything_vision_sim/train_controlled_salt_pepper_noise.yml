@@ -1,0 +1,7 @@
+_defaults:
+  - ./train_controlled.yml
+  - ./_defaults_train_corruptions.yml
+frame_transform:
+  _target: instant_video_models.transforms.salt_pepper_noise.SaltPepperNoise
+  salt_amount: 0.05
+  pepper_amount: 0.05

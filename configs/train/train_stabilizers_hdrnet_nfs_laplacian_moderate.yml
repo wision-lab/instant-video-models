@@ -1,10 +1,13 @@
 _defaults:
-  - ./_defaults.yml
+  - ./_defaults.yml 
   - ./_train_stabilizers.yml
   - configs/metrics/_video_metrics.yml
   - configs/models/hdrnet-laplacian.yml
   - nfs_laplacian_moderate_train_chunk_8: configs/datasets/nfs_laplacian_moderate_train_chunk_8.yml
   - nfs_laplacian_moderate_val: configs/datasets/nfs_laplacian_moderate_val.yml
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
+lambda: 0.4
 train_batch_size: 1
 train_dataset: ${nfs_laplacian_moderate_train_chunk_8.dataset}
 train_repeats: 50

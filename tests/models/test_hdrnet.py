@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from stability.models.hdrnet import HDRNet
+from instant_video_models.models.hdrnet import HDRNet
 
 
 @pytest.fixture

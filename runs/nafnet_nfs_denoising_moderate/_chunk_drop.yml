@@ -1,0 +1,8 @@
+chunk_drop:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.1
+    - _target: instant_video_models.transforms.chunk_drop.ChunkDrop
+      chunk_size: 8
+      drop_ratio: 0.1

@@ -1,7 +1,0 @@
-_defaults:
-  - ./train_spatial_ema_stabilizer_snow_unfrozen.yml
-_name: train_spatial_ema_stabilizer_snow_unfrozen_ablation
-
-# Confirm that adding stabilizers helps when the base model is unfrozen.
-controllers: [ ]
-stabilizers: [ ]

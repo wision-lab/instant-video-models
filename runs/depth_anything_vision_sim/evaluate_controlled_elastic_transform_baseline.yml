@@ -1,0 +1,7 @@
+_defaults:
+  - ./_defaults_evaluate_lambda.yml
+dataset:
+  frame_transform:
+    _target: instant_video_models.transforms.elastic_transform.ElasticTransform
+    magnitude: 50.0
+    smoothness: 5.0

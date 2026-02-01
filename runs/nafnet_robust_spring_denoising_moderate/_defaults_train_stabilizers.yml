@@ -1,34 +1,18 @@
 _defaults:
   - configs/train/train_stabilizers_nafnet_robust_spring.yml
   - ./_finetuned_weights.yml
-
-# Use lambda to create a subdir instead of appending to the name.
-_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
-checkpoint_search_path: ${_original_dir}/outputs/${_config_dir}/${_name}/${lambda}
-lambda: 0.2
-
-# Add noise to corrupted inputs but not clean outputs (ground truth).
-corruption_type: null
 corrupted_transform:
   _target: torchvision.transforms.Compose
   transforms:
     - _target: torchvision.transforms.Resize
       antialias: true
       size: 720
-    - _target: stability.transforms.gaussian_noise.GaussianNoise
+    - _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
       sigma: 0.1
+corruption_type: null
 train_dataset:
   corruption_type: ${corruption_type}
   corrupted_transform: ${corrupted_transform}
 val_dataset:
   corruption_type: ${corruption_type}
   corrupted_transform: ${corrupted_transform}
-
-# Same schedule as finetune_base_model.yml
-epochs: 20
-optimizer:
-  lr: 1e-4
-scheduler:
-  _target: torch.optim.lr_scheduler.MultiStepLR
-  milestones: [ 10, 15 ]
-  gamma: 0.1

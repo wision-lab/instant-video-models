@@ -1,0 +1,4 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - configs/stabilizers/nafnet/controlled_spatial.yml
+corruption_type: rain

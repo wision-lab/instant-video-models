@@ -1,3 +1,0 @@
-_defaults:
-  - ./_defaults_evaluate.yml
-  - configs/stabilizers/nafnet/spatial_ema_stabilizer.yml

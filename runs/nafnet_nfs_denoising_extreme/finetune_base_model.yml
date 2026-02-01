@@ -1,7 +1,6 @@
 _defaults:
   - configs/train/finetune_nafnet_nfs.yml
   - ./_noise_extreme.yml
-
 epochs: 20
 optimizer:
   lr: 1e-4

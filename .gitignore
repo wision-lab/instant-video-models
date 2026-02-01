@@ -1,10 +1,10 @@
-# Sorted in ascending order
 __pycache__
 .idea
 .pytest_cache
 *.jpg
 *.png
 *.pth
+*.zip
 data/clips
 data/misc
 data/nfs

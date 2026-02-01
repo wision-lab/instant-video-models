@@ -1,5 +1,5 @@
 _defaults:
   - ../visualizers/heatmap.yml
 model:
-  _target: stability.models.depth_anything.DepthAnything
+  _target: instant_video_models.models.depth_anything.DepthAnything
   revision: 5426e4f

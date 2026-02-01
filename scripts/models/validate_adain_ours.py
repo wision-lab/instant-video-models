@@ -9,7 +9,7 @@ from torchvision.io import read_image
 from torchvision.transforms.v2.functional import convert_image_dtype
 from torchvision.utils import save_image
 
-from stability.models.adain import AdaIN
+from instant_video_models.models.adain import AdaIN
 
 
 def main():

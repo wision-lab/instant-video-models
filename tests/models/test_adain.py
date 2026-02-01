@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from stability.models.adain import AdaIN
+from instant_video_models.models.adain import AdaIN
 
 
 @pytest.fixture

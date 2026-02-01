@@ -1,0 +1,8 @@
+alpha: 0.9
+stabilizers:
+  - filter:
+      name: module
+    module:
+      _target: instant_video_models.stabilizers.simple_fixed_stabilizer.SimpleFixedStabilizer
+      alpha: ${....alpha}
+      hook_target: output

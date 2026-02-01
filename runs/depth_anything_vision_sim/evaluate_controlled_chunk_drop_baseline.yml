@@ -1,0 +1,7 @@
+_defaults:
+  - ./_defaults_evaluate_lambda.yml
+dataset:
+  frame_transform:
+    _target: instant_video_models.transforms.chunk_drop.ChunkDrop
+    chunk_size: 8
+    drop_ratio: 0.1

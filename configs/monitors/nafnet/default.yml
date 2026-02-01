@@ -3,64 +3,64 @@ monitors:
   - filter:
       name: module.encoders.0.1
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.encoders.2.3
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.encoders.3.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.encoders.3.2
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
 
   # Middle blocks
   - filter:
       name: module.middle_blks.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.middle_blks.5
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.middle_blks.8
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.middle_blks.10
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
 
   # Decoder blocks
   - filter:
       name: module.decoders.0.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.decoders.1.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.decoders.2.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }
   - filter:
       name: module.decoders.3.0
     module:
-      _target: stability.monitors.value_monitor.ValueMonitor
+      _target: instant_video_models.monitors.value_monitor.ValueMonitor
       hook_selections: { 0: 0 , 1: 0 }

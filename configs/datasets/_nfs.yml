@@ -1,9 +1,8 @@
 dataset:
-  _target: stability.datasets.nfs.NFSVideo
+  _target: instant_video_models.datasets.nfs.NFSVideo
   location: ${_original_dir}/data/nfs
   ending_frame: null
   fps: 240
-  frame_drop_ratios: [ 1 ]
   frame_transform: null
   random_chunk_size: null
   random_crop_size: null

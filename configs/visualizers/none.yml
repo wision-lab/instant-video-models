@@ -1,2 +1,2 @@
 visualizer:
-  _target: stability.visualizers.none.NoneVisualizer
+  _target: instant_video_models.visualizers.none.NoneVisualizer

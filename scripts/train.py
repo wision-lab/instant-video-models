@@ -10,24 +10,22 @@ from torch.utils.data import ConcatDataset, DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
-from stability.config import initialize_run, instantiate
-from stability.helpers import prepare_item, prepare_time_step
-from stability.utils import (
+from instant_video_models.config import initialize_run, instantiate
+from instant_video_models.helpers import prepare_item, prepare_time_step
+from instant_video_models.hooks import add_hook_modules
+from instant_video_models.utils import (
     MeanValue,
-    add_hook_modules,
     best_pytorch_device,
     custom_collate,
     invoke_on_values,
     list_cuda_devices,
     make_log_header,
     set_random_seeds,
-    verify_invocation_count,
 )
 
 logger = logging.getLogger(__name__)
 
 
-# noinspection PyTypeChecker
 def main():
     device = best_pytorch_device()
     config = initialize_run()
@@ -74,10 +72,6 @@ def main():
     if freeze_initial_params:
         for parameter in initial_params:
             parameter.requires_grad = False
-    unfrozen_modules = config.get("unfrozen_modules", [])
-    for module_name in unfrozen_modules:
-        for parameter in model.get_submodule(module_name).parameters():
-            parameter.requires_grad = True
 
     if "controllers" in config:
         logger.info("Initializing controllers...")
@@ -112,7 +106,7 @@ def main():
     else:
         postprocess_transform = None
 
-    # Find a checkpoint to resume from, if any.
+    # Find a checkpoint to resume from, if any
     checkpoint_path = None
     if "checkpoint_path" in config:
         checkpoint_path = Path(config["checkpoint_path"])
@@ -125,7 +119,6 @@ def main():
                 checkpoint_path = option
                 break
 
-    # Load the checkpoint.
     skip_epochs = 0
     if checkpoint_path is not None:
         logger.info(f"Resuming from checkpoint in directory {checkpoint_path}")
@@ -211,7 +204,6 @@ def main():
                     mean_loss.update(loss_value.item())
                 for metric in metrics:
                     metric.update(prediction, ground_truth)
-                verify_invocation_count(stabilizer_dict, t + 1)
         logger.info("Done!")
 
     def train_pass():
@@ -227,8 +219,6 @@ def main():
             for module_dict in stabilizer_dict, controller_dict:
                 for item in module_dict.values():
                     item.train()
-            for module_name in unfrozen_modules:
-                model.get_submodule(module_name).train()
         else:
             model.train()
         flush()
@@ -255,7 +245,6 @@ def main():
                         loss_value.backward()
                 for metric in metrics:
                     metric.update(prediction.detach(), ground_truth)
-                verify_invocation_count(stabilizer_dict, t + 1)
             optimizer.step()
         logger.info("Done!")
 

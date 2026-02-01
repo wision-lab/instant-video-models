@@ -38,14 +38,14 @@ def get_bounding_box(mask):
 
 
 def main():
-    # Create the output directory.
+    # Create the output directory
     CROPPED_DIR.mkdir(exist_ok=True)
 
-    # Load object category labels.
+    # Load object category labels
     with open(LABEL_PATH) as label_file:
         label_dict = json.load(label_file)
 
-    # Process each sequence.
+    # Process each sequence
     for sequence_image_dir in tqdm(list(IMAGE_DIR.iterdir()), ncols=0):
         sequence_name = sequence_image_dir.name
         sequence_cropped_dir = CROPPED_DIR / sequence_name
@@ -60,7 +60,7 @@ def main():
                 if index == "background":
                     continue
 
-                # Maintain the object ID across frames.
+                # Maintain the object ID across frames
                 if color not in object_id_tracker:
                     object_id_tracker[color] = len(object_id_tracker) + 1
                 object_id = object_id_tracker[color]

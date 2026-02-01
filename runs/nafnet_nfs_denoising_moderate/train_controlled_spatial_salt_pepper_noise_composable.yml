@@ -1,0 +1,3 @@
+_defaults:
+  - ./train_controlled_spatial_salt_pepper_noise.yml
+  - configs/stabilizers/nafnet/controlled_composable.yml

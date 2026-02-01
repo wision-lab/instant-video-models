@@ -1,0 +1,3 @@
+_defaults:
+  - ./train_controlled_spatial_snow.yml
+freeze_initial_params: false

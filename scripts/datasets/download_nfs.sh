@@ -214,7 +214,7 @@ zip_urls=(
 # cd to the project root directory
 cd "$(dirname "${BASH_SOURCE[0]}")/../.."
 
-# Prepare a dataset directory.
+# Prepare a dataset directory
 mkdir -p data/nfs
 cd data/nfs
 

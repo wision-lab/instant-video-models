@@ -1,4 +1,4 @@
 transforms:
-  - _target: stability.transforms.elastic_transform.ElasticTransform
+  - _target: instant_video_models.transforms.elastic_transform.ElasticTransform
     magnitude: 50.0
     smoothness: 5.0

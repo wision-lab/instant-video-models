@@ -1,0 +1,3 @@
+_defaults:
+  - ./train_controlled_spatial_chunk_drop.yml
+  - configs/stabilizers/nafnet/controlled_composable.yml

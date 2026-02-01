@@ -1,4 +1,4 @@
 transforms:
-  - _target: stability.transforms.salt_pepper_noise.SaltPepperNoise
+  - _target: instant_video_models.transforms.salt_pepper_noise.SaltPepperNoise
     salt_amount: 0.05
     pepper_amount: 0.05

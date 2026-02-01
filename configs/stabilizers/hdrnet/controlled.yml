@@ -1,0 +1,75 @@
+stabilizers:
+  # One stabilizer on each Conv2d layer
+  - filter:
+      typename: Conv2d
+      neg_regex: controller_backbone
+    module:
+      _target: instant_video_models.stabilizers.controlled_conv_stabilizer.ControlledConvStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: false
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+      interpolate_mode: bilinear
+    links:
+      - location: controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on each Linear layer (found in the global net)
+  - filter:
+      typename: Linear
+      neg_regex: controller_backbone
+    module:
+      _target: instant_video_models.stabilizers.controlled_linear_stabilizer.ControlledLinearStabilizer
+      final_bias_init: 4.0
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 256
+      pool_backbone_output: true
+    links:
+      - location: controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+  # One stabilizer on the output
+  - filter:
+      name: ''
+      neg_regex: controller_backbone
+    module:
+      _target: instant_video_models.stabilizers.controlled_conv_stabilizer.ControlledConvStabilizer
+      conv_kernel_size: 3
+      exclude_feature_inputs: false
+      final_bias_init: -4.0
+      fusion_kernel_size: 1
+      hidden_layers: 2
+      hook_target: output
+      internal_channels: 64
+      interpolate_mode: bilinear
+    links:
+      - location: controller_backbone
+        name: controller_backbone
+
+    # Required for parameters to be visible
+    registration_name: stabilizer
+
+controllers:
+  # Backbone
+  - filter:
+      name: ''
+    module:
+      _target: instant_video_models.controllers.conv_backbone.ConvBackbone
+      conv_kernel_size: 3
+      hidden_layers: 6
+      hook_target: inputs
+      internal_channels: 32
+    pre_hook: true
+
+    # Required for parameters to be visible
+    registration_name: controller_backbone

@@ -1,0 +1,5 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - configs/stabilizers/nafnet/simple_learned.yml
+_output_dir: outputs/${_config_dir}/${_name}/${lambda}/${_datetime}
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

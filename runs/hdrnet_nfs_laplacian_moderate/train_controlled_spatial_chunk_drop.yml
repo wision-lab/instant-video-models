@@ -1,0 +1,12 @@
+_defaults:
+  - ./train_controlled_spatial.yml
+  - ./_defaults_train_corruptions.yml
+frame_transform:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: torchvision.transforms.Resize
+      antialias: true
+      size: 360
+    - _target: instant_video_models.transforms.chunk_drop.ChunkDrop
+      chunk_size: 8
+      drop_ratio: 0.1

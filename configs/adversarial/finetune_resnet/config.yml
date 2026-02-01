@@ -31,5 +31,5 @@ stabilizers:
       regex: ^model\.layer[1-4]\.\d+\.relu$ #'^model.model\.backbone\.conv_encoder\..*act3$'
       typename: ReLU
     module:
-      _target: stability.stabilizers.ema_stabilizer.EMAStabilizer
+      _target: instant_video_models.stabilizers.simple_fixed_stabilizer.SimpleFixedStabilizer
       decay: 0.95

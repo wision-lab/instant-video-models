@@ -1,0 +1,10 @@
+_defaults:
+  - configs/train/train_stabilizers_depth_anything_vision_sim.yml
+  - configs/stabilizers/depth_anything/controlled_spatial.yml
+epochs: 20
+optimizer:
+  lr: 1e-4
+scheduler:
+  _target: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [ 10, 15 ]
+  gamma: 0.1

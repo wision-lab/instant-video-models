@@ -1,0 +1,8 @@
+_defaults:
+  - ./_defaults_train_stabilizers.yml
+  - ./train_controlled_spatial.yml
+  - ./_jpeg_compression.yml
+_remove:
+  - input_transform
+input_transform: ${jpeg_compression}
+lambda: 0.2

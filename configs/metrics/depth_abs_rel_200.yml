@@ -1,5 +1,5 @@
 metric:
-  _target: stability.metrics.depth_abs_rel.DepthAbsRel
+  _target: instant_video_models.metrics.depth_abs_rel.DepthAbsRel
   assume_batch_dim: true
   mask_nan: true
   max_pred_depth: 200

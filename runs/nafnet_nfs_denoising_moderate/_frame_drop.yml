@@ -1,0 +1,7 @@
+frame_drop:
+  _target: torchvision.transforms.Compose
+  transforms:
+    - _target: instant_video_models.transforms.gaussian_noise.GaussianNoise
+      sigma: 0.1
+    - _target: instant_video_models.transforms.frame_drop.FrameDrop
+      drop_ratio: 0.1

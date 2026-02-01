@@ -1,0 +1,4 @@
+_defaults:
+  - ./evaluate_controlled_jpeg_compression_baseline.yml
+  - configs/stabilizers/depth_anything/controlled.yml
+override_weights_filepath: ${_original_dir}/WEIGHTS_FILEPATH

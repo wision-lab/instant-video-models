@@ -1,0 +1,3 @@
+_defaults:
+  - ./train_controlled_spatial_jpeg_compression.yml
+  - configs/stabilizers/nafnet/controlled_composable.yml

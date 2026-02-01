@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.metrics.depth_delta import DepthDelta
+from instant_video_models.metrics.depth_delta import DepthDelta
 
 
 def test_depth_delta():

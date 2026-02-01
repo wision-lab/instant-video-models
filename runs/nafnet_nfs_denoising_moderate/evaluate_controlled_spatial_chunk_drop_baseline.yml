@@ -1,0 +1,6 @@
+_defaults:
+  - ./_defaults_evaluate.yml
+  - ./_chunk_drop.yml
+_remove:
+  - input_transform
+input_transform: ${chunk_drop}

@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from stability.monitors.flow_monitor import FlowMonitor
+from instant_video_models.monitors.flow_monitor import FlowMonitor
 
 
 @pytest.fixture

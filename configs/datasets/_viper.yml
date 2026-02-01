@@ -1,5 +1,5 @@
 dataset:
-  _target: stability.datasets.viper.VIPERSegmentation
+  _target: instant_video_models.datasets.viper.VIPERSegmentation
   location: ${_original_dir}/data/viper
   ending_frame: null
   frame_transform: null
